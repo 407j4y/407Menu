@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>407 DOMINIO INTERNACIONAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: dark;
+    --void:#090404;
+    --pit:#120606;
+    --blood:#7a0d0d;
+    --blood-hi:#c81e1e;
+    --ember:#ea5a2e;
+    --bone:#e2d8cc;
+    --ash:#9a8a82;
+    --dim:#5e4646;
+    --line:rgba(200,30,30,.28);
+    --glow:0 0 22px rgba(200,30,30,.55);
+    --serif:'Cinzel', 'Times New Roman', serif;
+    --mono:'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+    --cross-tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='96' viewBox='0 0 72 96'%3E%3Cg fill='%237a0d0d' fill-opacity='.22' transform='rotate(180 36 48)'%3E%3Crect x='33' y='28' width='6' height='40'/%3E%3Crect x='24' y='38' width='24' height='6'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  :root:not([data-theme="light"]){ color-scheme: dark; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme: dark; } }
+  :root[data-theme="dark"]{ color-scheme: dark; }
+
+  *{ box-sizing:border-box; margin:0; padding:0; font-style:normal !important; }
+  ::placeholder{ font-style:normal !important; color:#4c3535; }
+  html{ height:100%; width:100%; scroll-padding-top:env(safe-area-inset-top,0px); touch-action:manipulation; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body{
+    min-height:100%; width:100%; touch-action:manipulation;
+    background:
+      radial-gradient(ellipse at 50% -8%, rgba(122,13,13,.38), transparent 55%),
+      var(--cross-tile),
+      var(--void);
+    color:var(--bone);
+    font-family:var(--mono);
+    font-size:14px;
+    line-height:1.55;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--blood-hi); color:#000; }
+  button{ font-family:inherit; color:inherit; cursor:pointer; }
+  a{ color:var(--ember); }
+  :focus-visible{ outline:2px solid var(--ember); outline-offset:2px; }
+
+  .xsvg{ display:block; fill:currentColor; }
+
+  /* ---------------- GATE ---------------- */
+  #gate{
+    position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));
+    background:radial-gradient(circle at 50% 35%, #1c0606 0%, var(--void) 68%);
+    transition:opacity .7s ease, visibility .7s ease;
+  }
+  #gate.gone{ opacity:0; visibility:hidden; pointer-events:none; }
+  #gateEmbers{ position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+  .gate-box{
+    width:min(100%, 400px); text-align:center; padding:38px 26px 30px;
+    border:1px solid var(--line); background:linear-gradient(180deg, rgba(122,13,13,.10), rgba(0,0,0,.6));
+    position:relative; z-index:1; overflow:hidden;
+  }
+  .gate-box::before,.gate-box::after{ content:""; position:absolute; width:20px; height:20px; border:1px solid var(--blood-hi); z-index:2; }
+  .gate-box::before{ top:-1px; left:-1px; border-right:0; border-bottom:0; }
+  .gate-box::after{ bottom:-1px; right:-1px; border-left:0; border-top:0; }
+  .gate-scan{
+    position:absolute; left:0; right:0; height:46%; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(234,90,46,.10) 45%, rgba(234,90,46,.22) 50%, rgba(234,90,46,.10) 55%, transparent);
+    animation:gateScan 4.5s linear infinite;
+  }
+  @keyframes gateScan{ 0%{ top:-46%; } 100%{ top:100%; } }
+  .num407{ display:flex; align-items:center; justify-content:center; gap:2px; margin:0 auto 2px; position:relative; z-index:1; }
+  .n4, .n7{
+    font-family:var(--serif); font-weight:900; line-height:1;
+    font-size:clamp(46px,18vw,84px);
+    background:linear-gradient(180deg, var(--bone) 0%, var(--ember) 55%, var(--blood-hi) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 10px rgba(200,30,30,.5)) drop-shadow(0 0 20px rgba(234,90,46,.25));
+    animation:numPulse 4.4s ease-in-out infinite;
+  }
+  @keyframes numPulse{
+    0%,100%{ filter:drop-shadow(0 0 10px rgba(200,30,30,.5)) drop-shadow(0 0 20px rgba(234,90,46,.25)); }
+    50%{ filter:drop-shadow(0 0 16px rgba(234,90,46,.85)) drop-shadow(0 0 28px rgba(234,90,46,.4)); }
+  }
+  .globe-wrap{ position:relative; width:132px; height:170px; flex:none; overflow:hidden; animation:globePulse 4.4s ease-in-out infinite; }
+  @keyframes globePulse{
+    0%,100%{ filter:drop-shadow(0 0 8px rgba(200,30,30,.3)); }
+    50%{ filter:drop-shadow(0 0 18px rgba(234,90,46,.5)); }
+  }
+  .globe-wrap .gate-globe{ position:absolute; left:0; top:38px; width:132px; height:132px; margin:0; z-index:2; }
+  .globe-peek{
+    position:absolute; left:0; top:38px; width:132px; height:132px; z-index:1; overflow:visible;
+    transform:translateY(92px) scale(.8); opacity:0; transform-origin:50% 85%;
+    animation:demonPeek 6.5s linear infinite;
+  }
+  .peek-horn-l, .peek-horn-r, .peek-head{ fill:#040101; }
+  .peek-eye{ fill:var(--blood-hi); filter:drop-shadow(0 0 5px rgba(234,90,46,.9)); }
+  .peek-mouth{ fill:none; stroke:var(--blood-hi); stroke-width:5; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; filter:drop-shadow(0 0 4px rgba(234,90,46,.85)); animation:mouthDraw 6.5s linear infinite; }
+  @keyframes demonPeek{
+    0%   { transform:translateY(92px) scale(.80) rotate(0deg); opacity:0; }
+    38%  { transform:translateY(92px) scale(.80) rotate(0deg); opacity:0; }
+    46%  { transform:translateY(58px) scale(.85) rotate(-.5deg); opacity:.35; }
+    54%  { transform:translateY(20px) scale(.92) rotate(-1.5deg); opacity:.85; }
+    62%  { transform:translateY(-14px) scale(.98) rotate(-2.5deg); opacity:1; }
+    70%  { transform:translateY(-30px) scale(1) rotate(-3deg); opacity:1; }
+    82%  { transform:translateY(-30px) scale(1) rotate(-3deg); opacity:1; }
+    90%  { transform:translateY(6px) scale(.94) rotate(-1deg); opacity:.7; }
+    97%  { transform:translateY(70px) scale(.83) rotate(0deg); opacity:.15; }
+    100% { transform:translateY(92px) scale(.80) rotate(0deg); opacity:0; }
+  }
+  @keyframes mouthDraw{
+    0%,50% { stroke-dashoffset:1; }
+    64%,80% { stroke-dashoffset:0; }
+    92%,100% { stroke-dashoffset:1; }
+  }
+  .gate-cross{ width:54px; height:84px; margin:0 auto 18px; color:var(--blood-hi); filter:drop-shadow(0 0 14px rgba(200,30,30,.7)); transform:rotate(180deg); position:relative; z-index:1; }
+  .gate-title{
+    font-family:var(--serif); font-weight:900; font-size:clamp(22px,7vw,30px); letter-spacing:.14em; line-height:1.2; color:var(--bone);
+    text-shadow:0 0 16px rgba(200,30,30,.45); position:relative; z-index:1; animation:titleGlitch 7s infinite;
+  }
+  @keyframes titleGlitch{
+    0%, 95%, 100% { text-shadow:0 0 16px rgba(200,30,30,.45); transform:translate(0,0); }
+    96% { text-shadow:-2px 0 var(--blood-hi), 2px 0 #2ac8c8; transform:translate(-1.5px,0); }
+    97% { text-shadow:2px 0 var(--blood-hi), -2px 0 #2ac8c8; transform:translate(1.5px,0); }
+    98% { text-shadow:-1px 0 var(--blood-hi), 1px 0 #2ac8c8; transform:translate(-1px,0); }
+    99% { text-shadow:0 0 16px rgba(200,30,30,.45); transform:translate(0,0); }
+  }
+  .gate-sub{ margin:10px 0 26px; font-size:11px; letter-spacing:.2em; color:var(--ash); text-transform:uppercase; position:relative; z-index:1; }
+  .gate-sub::after{ content:'▌'; margin-left:4px; color:var(--blood-hi); animation:cursorBlink 1s steps(1) infinite; }
+  @keyframes cursorBlink{ 0%,49%{ opacity:1; } 50%,100%{ opacity:0; } }
+  #pw{
+    width:100%; padding:14px 16px; background:#000; border:1px solid var(--line); color:var(--blood-hi);
+    font-family:var(--mono); font-size:16px; letter-spacing:.35em; text-align:center; outline:none; border-radius:0;
+    position:relative; z-index:1;
+  }
+  #pw:focus{ border-color:var(--blood-hi); box-shadow:0 0 16px rgba(200,30,30,.3); }
+  #enter{
+    margin-top:14px; width:100%; padding:14px; background:var(--blood); border:1px solid var(--blood-hi); color:#fff;
+    font-family:var(--serif); font-weight:600; font-size:13px; letter-spacing:.22em; text-transform:uppercase; transition:background .2s, box-shadow .2s;
+    position:relative; z-index:1;
+  }
+  #enter:hover{ background:var(--blood-hi); box-shadow:0 0 22px rgba(200,30,30,.5); }
+  #enter:disabled{ opacity:.5; cursor:wait; }
+  #gate-msg{ margin-top:14px; min-height:16px; font-size:11.5px; color:var(--ember); position:relative; z-index:1; }
+  .shake{ animation:shake .4s; }
+  @keyframes shake{ 10%,90%{transform:translateX(-2px)} 20%,80%{transform:translateX(4px)} 30%,50%,70%{transform:translateX(-8px)} 40%,60%{transform:translateX(8px)} }
+
+  /* ---------------- SHELL ---------------- */
+  #app{ display:none; position:relative; }
+  #app.on{ display:block; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 18px; }
+
+  header.top{ text-align:center; padding:44px 0 24px; border-bottom:1px solid var(--line); }
+  .top-cross{ width:26px; height:40px; margin:0 auto 14px; color:var(--blood-hi); filter:drop-shadow(0 0 10px rgba(200,30,30,.7)); transform:rotate(180deg); }
+  h1.brand{
+    font-family:var(--serif); font-weight:900; font-size:clamp(26px,7.4vw,54px); line-height:1.12; letter-spacing:.12em;
+    color:var(--bone); text-shadow:0 0 24px rgba(200,30,30,.4);
+  }
+  .brand-sub{ margin:12px auto 0; max-width:620px; color:var(--ash); font-size:12.5px; }
+  .status{
+    display:inline-block; margin-top:16px; padding:6px 12px; border:1px solid var(--line); font-size:11px; color:var(--ash);
+  }
+  .status.ok{ color:#8fd98f; border-color:rgba(143,217,143,.4); }
+  .status.bad{ color:var(--ember); border-color:rgba(234,90,46,.45); }
+  .legal{
+    max-width:640px; margin:18px auto 0; padding:12px 14px; border:1px solid var(--line); background:rgba(122,13,13,.07);
+    font-size:11.5px; color:var(--bone); text-align:left;
+  }
+  .legal b{ color:var(--ember); font-weight:500; }
+
+  .search{ margin:22px 0 4px; }
+  .search input, .field input, .field textarea, .field select{
+    width:100%; background:#000; border:1px solid var(--line); color:var(--bone); font-family:var(--mono); font-size:16px;
+    padding:11px 12px; border-radius:0; outline:none;
+  }
+  .search input:focus, .field input:focus, .field textarea:focus, .field select:focus{ border-color:var(--blood-hi); }
+  .field textarea{ min-height:110px; resize:vertical; }
+  .field select{ appearance:none; }
+
+  .home-title, .view-title{ font-family:var(--serif); font-weight:600; font-size:18px; letter-spacing:.08em; margin:32px 0 6px; }
+  .view-desc{ color:var(--ash); font-size:12.5px; max-width:680px; margin-bottom:18px; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px; margin-top:16px; }
+
+  .cat, .tool{
+    text-align:left; display:block; width:100%; padding:16px; border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(122,13,13,.07), rgba(0,0,0,.45)); text-decoration:none; color:var(--bone);
+    transition:border-color .2s, box-shadow .2s; position:relative;
+  }
+  .cat:hover, .tool:hover{ border-color:var(--blood-hi); box-shadow:0 6px 24px rgba(200,30,30,.16); }
+  .cat .cx{ width:14px; height:22px; color:var(--blood-hi); transform:rotate(180deg); margin-bottom:10px; filter:drop-shadow(0 0 6px rgba(200,30,30,.6)); }
+  .cat .cn, .tool .tn{ font-family:var(--serif); font-weight:600; font-size:14.5px; letter-spacing:.03em; display:flex; justify-content:space-between; gap:8px; align-items:baseline; }
+  .cat .cc{ color:var(--blood-hi); font-family:var(--mono); font-size:11px; }
+  .cat .cd, .tool .td{ margin-top:7px; font-size:11.5px; color:var(--ash); line-height:1.5; }
+  .badge{ display:inline-block; margin-top:9px; padding:2px 7px; border:1px solid var(--line); font-size:10px; color:var(--ash); }
+  .badge.live{ color:var(--ember); border-color:rgba(234,90,46,.5); }
+  .badge.local{ color:#8fd98f; border-color:rgba(143,217,143,.35); }
+  .cat.fbi{ border-color:rgba(200,30,30,.6); background:linear-gradient(180deg, rgba(122,13,13,.22), rgba(0,0,0,.5)); }
+
+  .back{
+    margin-top:26px; padding:8px 14px; background:transparent; border:1px solid var(--line); font-size:12px; color:var(--ash);
+  }
+  .back:hover{ color:var(--bone); border-color:var(--blood-hi); }
+
+  /* ---------------- TOOL PANEL ---------------- */
+  #panel{
+    position:fixed; inset:0; z-index:60; display:none; background:rgba(4,1,1,.86);
+    padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+  }
+  #panel.on{ display:block; }
+  .sheet{
+    position:absolute; inset:0; margin:auto; max-width:760px; height:100%; overflow-y:auto; background:var(--pit);
+    border-left:1px solid var(--line); border-right:1px solid var(--line); padding:20px 18px 40px;
+  }
+  .sheet-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .sheet-head h2{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:.05em; }
+  .x{ width:38px; height:38px; flex:none; background:transparent; border:1px solid var(--line); font-size:20px; line-height:1; color:var(--bone); }
+  .x:hover{ border-color:var(--blood-hi); }
+  .sheet .desc{ margin:8px 0 18px; color:var(--ash); font-size:12.5px; }
+  .field{ margin-bottom:14px; }
+  .field label{ display:block; margin-bottom:6px; font-size:11.5px; color:var(--ash); }
+  .field input[type=file]{ padding:9px; font-size:13px; }
+  .run{
+    padding:12px 22px; background:var(--blood); border:1px solid var(--blood-hi); color:#fff;
+    font-family:var(--serif); font-weight:600; font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+  }
+  .run:hover{ background:var(--blood-hi); }
+  .run:disabled{ opacity:.5; cursor:wait; }
+  .out-wrap{ margin-top:22px; }
+  .out-bar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:11px; color:var(--ash); }
+  .copy{ padding:5px 10px; background:transparent; border:1px solid var(--line); font-size:11px; color:var(--ash); }
+  .copy:hover{ color:var(--bone); border-color:var(--blood-hi); }
+  pre.out{
+    background:#000; border:1px solid var(--line); padding:14px; font-family:var(--mono); font-size:12.5px; color:var(--bone);
+    white-space:pre-wrap; word-break:break-word; min-height:60px; max-height:none;
+  }
+  .links{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .links a{ padding:7px 11px; border:1px solid var(--line); font-size:12px; text-decoration:none; color:var(--bone); }
+  .links a:hover{ border-color:var(--blood-hi); color:var(--ember); }
+  .out-img{ margin-top:12px; max-width:200px; border:1px solid var(--line); display:block; }
+
+  /* ---------------- FBI ---------------- */
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
+  .chip{ padding:7px 12px; background:transparent; border:1px solid var(--line); font-size:12px; color:var(--ash); }
+  .chip.on{ border-color:var(--blood-hi); color:#fff; background:var(--blood); }
+  .fbi-bar{ display:flex; gap:8px; margin-top:6px; }
+  .fbi-bar input{ flex:1; background:#000; border:1px solid var(--line); color:var(--bone); font-family:var(--mono); font-size:16px; padding:11px 12px; border-radius:0; outline:none; }
+  .fbi-bar button{ padding:0 16px; background:var(--blood); border:1px solid var(--blood-hi); color:#fff; font-family:var(--serif); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+  .fgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:16px; }
+  .fcard{ border:1px solid var(--line); background:rgba(0,0,0,.5); display:flex; flex-direction:column; }
+  .fimg{ position:relative; aspect-ratio:3/4; background:#0d0505; display:flex; align-items:center; justify-content:center; overflow:hidden; border-bottom:1px solid var(--line); }
+  .fimg img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .fimg .ph{ color:var(--dim); width:40px; height:62px; transform:rotate(180deg); }
+  .fbody{ padding:12px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .fname{ font-family:var(--serif); font-weight:600; font-size:14px; letter-spacing:.03em; }
+  .fdesc{ font-size:11.5px; color:var(--ash); }
+  .freward{ font-size:11.5px; color:var(--ember); }
+  .fwarn{ font-size:10.5px; color:#ff8a7a; }
+  .fmeta{ font-size:10.5px; color:var(--dim); }
+  .fcard a.more{ margin-top:auto; padding:9px 12px; border-top:1px solid var(--line); font-size:12px; text-align:center; text-decoration:none; color:var(--bone); }
+  .fcard a.more:hover{ background:var(--blood); }
+  .note{ margin-top:16px; padding:14px; border:1px solid var(--line); background:rgba(122,13,13,.08); font-size:12px; color:var(--bone); }
+  .pager{ display:flex; gap:10px; align-items:center; justify-content:center; margin:22px 0; font-size:12px; color:var(--ash); }
+  .pager button{ padding:8px 14px; background:transparent; border:1px solid var(--line); font-size:12px; color:var(--bone); }
+  .pager button:disabled{ opacity:.35; cursor:default; }
+
+  footer.foot{ text-align:center; padding:44px 18px 70px; border-top:1px solid var(--line); margin-top:50px; font-size:11px; color:var(--dim); }
+  footer.foot .fx{ width:16px; height:26px; margin:0 auto 10px; color:var(--blood-hi); transform:rotate(180deg); }
+
+  /* ---------------- DEMONIO ---------------- */
+  .demon{
+    position:fixed; right:10px; bottom:calc(10px + env(safe-area-inset-bottom,0px)); z-index:5;
+    width:92px; height:auto; opacity:.9; pointer-events:none;
+    filter:drop-shadow(0 6px 16px rgba(0,0,0,.75));
+  }
+  .demon-svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .demon-body, .demon-horn-l, .demon-horn-r{ fill:#040101; }
+  .demon-eye{
+    fill:var(--blood-hi); transform-origin:center; transform-box:fill-box;
+    filter:drop-shadow(0 0 5px rgba(234,90,46,.9)) drop-shadow(0 0 10px rgba(200,30,30,.55));
+  }
+  .demon-eye.eye-l{ animation:demonBlink 6.2s infinite; }
+  .demon-eye.eye-r{ animation:demonBlink 6.2s infinite; animation-delay:.12s; }
+  @keyframes demonBlink{
+    0%, 90%, 100% { transform:scaleY(1); }
+    94% { transform:scaleY(.06); }
+    97% { transform:scaleY(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cross" viewBox="0 0 40 64"><rect x="17" y="0" width="6" height="64"/><rect x="3" y="14" width="34" height="6"/></symbol>
+</svg>
+
+<!-- ===== ACCESO ===== -->
+<div id="gate">
+  <canvas id="gateEmbers" aria-hidden="true"></canvas>
+  <div class="gate-box" id="gatebox">
+    <div class="gate-scan" aria-hidden="true"></div>
+    <div class="num407" aria-hidden="true">
+      <span class="n4">4</span>
+      <div class="globe-wrap">
+        <svg class="globe-peek" viewBox="0 0 140 140" aria-hidden="true">
+          <path class="peek-horn-l" d="M55 42 L38 6 L64 38 Z"></path>
+          <path class="peek-horn-r" d="M85 42 L102 6 L76 38 Z"></path>
+          <path class="peek-head" d="M70 28 C50 28 37 44 37 64 C37 85 52 100 70 100 C88 100 103 85 103 64 C103 44 90 28 70 28 Z"></path>
+          <ellipse class="peek-eye" cx="57" cy="62" rx="7.5" ry="5.5"></ellipse>
+          <ellipse class="peek-eye" cx="83" cy="62" rx="7.5" ry="5.5"></ellipse>
+          <path class="peek-mouth" pathLength="1" d="M50 78 Q70 98 90 78"></path>
+        </svg>
+        <canvas id="gateGlobe" class="gate-globe" aria-hidden="true"></canvas>
+      </div>
+      <span class="n7">7</span>
+    </div>
+    <svg class="gate-cross xsvg" viewBox="0 0 40 64"><use href="#cross"/></svg>
+    <div class="gate-title">DOMINIO<br>INTERNACIONAL</div>
+    <div class="gate-sub">Acceso restringido</div>
+    <input id="pw" type="password" placeholder="contraseña" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Contraseña">
+    <button id="enter" type="button">Entrar</button>
+    <div id="gate-msg" role="status"></div>
+  </div>
+</div>
+
+<!-- ===== SISTEMA ===== -->
+<div id="app">
+  <div class="demon" id="demon" aria-hidden="true">
+    <svg class="demon-svg" viewBox="0 0 200 260">
+      <path class="demon-horn-l" d="M76 46 L52 -6 L90 40 Z"></path>
+      <path class="demon-horn-r" d="M124 46 L148 -6 L110 40 Z"></path>
+      <path class="demon-body" d="M100 18
+        C 78 18 62 34 56 58
+        C 46 96 42 150 58 208
+        C 66 236 82 252 100 252
+        C 118 252 134 236 142 208
+        C 158 150 154 96 144 58
+        C 138 34 122 18 100 18 Z"></path>
+      <ellipse class="demon-eye eye-l" cx="80" cy="108" rx="10" ry="7"></ellipse>
+      <ellipse class="demon-eye eye-r" cx="120" cy="108" rx="10" ry="7"></ellipse>
+    </svg>
+  </div>
+  <div class="wrap">
+    <header class="top">
+      <svg class="top-cross xsvg" viewBox="0 0 40 64"><use href="#cross"/></svg>
+      <h1 class="brand">407 DOMINIO INTERNACIONAL</h1>
+      <p class="brand-sub">Consola de herramientas de seguridad, OSINT e inteligencia. Todo lo que ves acá corre dentro de esta misma página.</p>
+      <div class="status" id="status">comprobando red…</div>
+      <div class="legal"><b>Uso responsable.</b> Estas herramientas son de acceso público y sirven para investigar, auditar tus propios sistemas y aprender. Usalas solo sobre activos tuyos o con autorización expresa. Atacar a terceros sin permiso es delito en casi todos los países.</div>
+    </header>
+
+    <main id="view"></main>
+
+    <footer class="foot">
+      <svg class="fx xsvg" viewBox="0 0 40 64"><use href="#cross"/></svg>
+      407 DOMINIO INTERNACIONAL · las herramientas EN VIVO consultan servicios públicos de terceros; respetá sus términos y límites de uso.
+    </footer>
+  </div>
+</div>
+
+<!-- ===== PANEL DE HERRAMIENTA ===== -->
+<div id="panel" role="dialog" aria-modal="true" aria-labelledby="p-title">
+  <div class="sheet">
+    <div class="sheet-head"><h2 id="p-title"></h2><button class="x" id="p-close" type="button" aria-label="Cerrar">×</button></div>
+    <p class="desc" id="p-desc"></p>
+    <form id="p-form" autocomplete="off"></form>
+    <div class="out-wrap" id="p-outwrap" hidden>
+      <div class="out-bar"><span>resultado</span><button class="copy" id="p-copy" type="button">copiar</button></div>
+      <pre class="out" id="p-out"></pre>
+      <div class="links" id="p-links"></div>
+      <img class="out-img" id="p-img" alt="" hidden>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+   407 DOMINIO INTERNACIONAL — núcleo y herramientas
+   ============================================================ */
+const enc = new TextEncoder(), dec = new TextDecoder();
+const T = [];
+const CATS = [
+  { id:'cod',   name:'Codificación y Cifrado',        desc:'Convertí, ofuscá y decodificá texto: Base64, hex, binario, César, Vigenère, XOR y más.' },
+  { id:'hash',  name:'Hashes e Integridad',           desc:'Calculá y verificá huellas digitales de textos y archivos, todo en tu navegador.' },
+  { id:'pass',  name:'Contraseñas y Secretos',        desc:'Generá claves seguras, medí su fortaleza, comprobá filtraciones y detectá secretos expuestos.' },
+  { id:'web',   name:'Análisis Web y Cabeceras',      desc:'Auditá cabeceras HTTP, cookies, URLs, tokens JWT y archivos de configuración web.' },
+  { id:'net',   name:'Redes e IP',                    desc:'Calculadoras de subredes, conversores de direcciones y referencias de puertos y DNS.' },
+  { id:'dns',   name:'DNS y Correo',                  desc:'Consultas DNS reales y análisis de SPF, DKIM, DMARC y cabeceras de email.' },
+  { id:'intel', name:'Inteligencia de IPs y Dominios',desc:'Geolocalización, ASN, RDAP, historial web, subdominios y exposición de una IP.' },
+  { id:'geo',   name:'Geolocalización OSINT',         desc:'Coordenadas, distancias, geocodificación, husos horarios y metadatos GPS de fotos.' },
+  { id:'vuln',  name:'Vulnerabilidades y CVE',        desc:'Consultá CVE, puntajes EPSS y CVSS, catálogo KEV y referencias OWASP, CWE y MITRE.' },
+  { id:'for',   name:'Forense y Malware',             desc:'Analizá archivos y texto: firmas, hex, strings, entropía, IOCs, timestamps y regex.' },
+  { id:'osint', name:'OSINT de Cuentas y Personas',   desc:'Generadores de dorks, usuarios y correos, más consultas públicas de GitHub y Gravatar.' },
+  { id:'ext',   name:'Portales Externos',             desc:'Servicios que requieren cuenta o clave propia. Se abren en su sitio oficial.' },
+  { id:'fbi',   name:'FBI Most Wanted',               desc:'Base pública de personas buscadas por el FBI, con fotos, cargos y recompensas.' }
+];
+
+function add(cat, name, desc, fields, run, live){ T.push({ cat, name, desc, fields, run, live: !!live }); }
+const ta = (k,l,p,v)=>({ k, l, t:'textarea', p:p||'', v:v||'' });
+const tx = (k,l,p,v)=>({ k, l, t:'text', p:p||'', v:v||'' });
+const nu = (k,l,v)=>({ k, l, t:'number', v });
+const se = (k,l,o)=>({ k, l, t:'select', o });
+const fi = (k,l)=>({ k, l, t:'file' });
+
+/* ---------- utilidades ---------- */
+const hex = u8 => Array.from(u8, b => b.toString(16).padStart(2,'0')).join('');
+const unhex = s => { s = s.replace(/0x/gi,'').replace(/[^0-9a-f]/gi,''); if (s.length % 2) throw new Error('El hexadecimal tiene longitud impar.'); return Uint8Array.from(s.match(/../g) || [], h => parseInt(h,16)); };
+const u8str = u8 => dec.decode(u8);
+const b64e = u8 => { let s=''; for (let i=0;i<u8.length;i+=0x8000) s += String.fromCharCode.apply(null, u8.subarray(i,i+0x8000)); return btoa(s); };
+const b64d = s => { s = s.trim().replace(/-/g,'+').replace(/_/g,'/').replace(/\s+/g,''); while (s.length % 4) s += '='; return Uint8Array.from(atob(s), c => c.charCodeAt(0)); };
+const digest = async (alg,u8) => new Uint8Array(await crypto.subtle.digest(alg,u8));
+const readFile = f => { if (!f) throw new Error('Elegí un archivo primero.'); return f.arrayBuffer().then(b => new Uint8Array(b)); };
+const rnd = n => { const lim = Math.floor(4294967296/n)*n, a = new Uint32Array(1); do { crypto.getRandomValues(a); } while (a[0] >= lim); return a[0] % n; };
+const pad = (s,n) => String(s).padEnd(n);
+const lines = s => s.split(/\r?\n/);
+const uniq = a => [...new Set(a)];
+
+function md5(u8){
+  const s=[7,12,17,22,7,12,17,22,7,12,17,22,7,12,17,22,5,9,14,20,5,9,14,20,5,9,14,20,5,9,14,20,4,11,16,23,4,11,16,23,4,11,16,23,4,11,16,23,6,10,15,21,6,10,15,21,6,10,15,21,6,10,15,21];
+  const K = new Array(64); for (let i=0;i<64;i++) K[i] = Math.floor(Math.abs(Math.sin(i+1)) * 4294967296);
+  let a0=0x67452301, b0=0xefcdab89|0, c0=0x98badcfe|0, d0=0x10325476;
+  const len=u8.length, total=(((len+8)>>6)+1)*64, buf=new Uint8Array(total);
+  buf.set(u8); buf[len]=0x80;
+  const dv=new DataView(buf.buffer);
+  dv.setUint32(total-8,(len*8)>>>0,true); dv.setUint32(total-4,Math.floor(len*8/4294967296),true);
+  for (let o=0;o<total;o+=64){
+    const M=new Array(16); for (let j=0;j<16;j++) M[j]=dv.getUint32(o+j*4,true);
+    let A=a0,B=b0,C=c0,D=d0;
+    for (let i=0;i<64;i++){
+      let F,g;
+      if (i<16){ F=(B&C)|(~B&D); g=i; }
+      else if (i<32){ F=(D&B)|(~D&C); g=(5*i+1)%16; }
+      else if (i<48){ F=B^C^D; g=(3*i+5)%16; }
+      else { F=C^(B|~D); g=(7*i)%16; }
+      F=(F+A+K[i]+M[g])|0; A=D; D=C; C=B;
+      B=(B+((F<<s[i])|(F>>>(32-s[i]))))|0;
+    }
+    a0=(a0+A)|0; b0=(b0+B)|0; c0=(c0+C)|0; d0=(d0+D)|0;
+  }
+  return [a0,b0,c0,d0].map(v => [0,1,2,3].map(j => ((v>>>(8*j))&255).toString(16).padStart(2,'0')).join('')).join('');
+}
+const CRC_T = (()=>{ const t=new Uint32Array(256); for (let n=0;n<256;n++){ let c=n; for (let k=0;k<8;k++) c = c&1 ? 0xEDB88320^(c>>>1) : c>>>1; t[n]=c>>>0; } return t; })();
+const crc32 = u8 => { let c=0xFFFFFFFF; for (let i=0;i<u8.length;i++) c = CRC_T[(c^u8[i])&255]^(c>>>8); return ((c^0xFFFFFFFF)>>>0).toString(16).padStart(8,'0'); };
+
+/* ---------- red ---------- */
+let NET_OK = null;
+const NET_MSG = 'No se pudo conectar con el servicio. Si estás viendo la página dentro de claude.ai, ese entorno bloquea las conexiones a otros sitios: alojá este archivo en tu propio hosting (o abrilo localmente) y la herramienta funciona.';
+async function net(url, o = {}){
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), o.timeout || 14000);
+  try {
+    const r = await fetch(url, { method:o.method||'GET', headers:o.headers, body:o.body, signal:ctl.signal });
+    if (!r.ok){ const e = new Error('El servicio respondió HTTP ' + r.status + (r.status===404?' (no encontrado)':'') ); e.http = r.status; throw e; }
+    return o.text ? await r.text() : await r.json();
+  } catch (e){
+    if (e.http) throw e;
+    throw new Error(e.name === 'AbortError' ? 'Tiempo de espera agotado.' : NET_MSG);
+  } finally { clearTimeout(timer); }
+}
+const RT = {1:'A',2:'NS',5:'CNAME',6:'SOA',12:'PTR',15:'MX',16:'TXT',28:'AAAA',33:'SRV',43:'DS',48:'DNSKEY',257:'CAA'};
+async function doh(name, type, via){
+  const q = '?name=' + encodeURIComponent(name) + '&type=' + encodeURIComponent(type);
+  return via === 'cf'
+    ? net('https://cloudflare-dns.com/dns-query' + q, { headers:{ accept:'application/dns-json' } })
+    : net('https://dns.google/resolve' + q);
+}
+const dohLines = j => (j.Answer || []).map(a => pad(a.name,32) + pad(RT[a.type] || a.type,7) + pad('TTL ' + a.TTL,10) + a.data);
+const txtOf = j => (j.Answer || []).filter(a => a.type === 16).map(a => a.data.replace(/^"|"$/g,'').replace(/"\s*"/g,''));
+
+/* ============================================================
+   1) CODIFICACIÓN Y CIFRADO
+   ============================================================ */
+add('cod','Base64','Codifica o decodifica texto en Base64. Acepta UTF-8 y la variante URL-safe.',
+  [se('m','Modo',['Codificar','Decodificar']), ta('i','Texto')],
+  v => v.m==='Codificar' ? b64e(enc.encode(v.i)) : u8str(b64d(v.i)));
+
+add('cod','Hexadecimal','Convierte texto a bytes en hexadecimal y viceversa.',
+  [se('m','Modo',['Texto a hex','Hex a texto']), ta('i','Entrada')],
+  v => v.m==='Texto a hex' ? hex(enc.encode(v.i)).replace(/(..)/g,'$1 ').trim() : u8str(unhex(v.i)));
+
+add('cod','URL (porcentaje)','Codifica o decodifica caracteres especiales en direcciones web (%20, %3D…).',
+  [se('m','Modo',['Codificar','Decodificar']), ta('i','Texto')],
+  v => v.m==='Codificar' ? encodeURIComponent(v.i) : decodeURIComponent(v.i));
+
+add('cod','Binario','Convierte texto a ceros y unos (8 bits por byte) y de vuelta.',
+  [se('m','Modo',['Texto a binario','Binario a texto']), ta('i','Entrada')],
+  v => {
+    if (v.m==='Texto a binario') return Array.from(enc.encode(v.i), b => b.toString(2).padStart(8,'0')).join(' ');
+    const bits = v.i.replace(/[^01]/g,''); if (bits.length % 8) throw new Error('La cantidad de bits debe ser múltiplo de 8.');
+    return u8str(Uint8Array.from(bits.match(/.{8}/g), x => parseInt(x,2)));
+  });
+
+add('cod','Entidades HTML','Escapa o desescapa caracteres especiales de HTML (&lt; &gt; &amp; …).',
+  [se('m','Modo',['Escapar','Desescapar']), ta('i','Texto')],
+  v => {
+    if (v.m==='Escapar') return v.i.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    const t = document.createElement('textarea'); t.innerHTML = v.i; return t.value;
+  });
+
+const shiftStr = (s,n) => s.replace(/[a-z]/gi, c => { const b = c <= 'Z' ? 65 : 97; return String.fromCharCode((((c.charCodeAt(0)-b+n)%26)+26)%26+b); });
+add('cod','ROT13 / César','Cifrado por desplazamiento de letras. Con desplazamiento 0 muestra las 25 variantes posibles.',
+  [ta('i','Texto'), nu('n','Desplazamiento (0 = probar todos)',13)],
+  v => { if (v.n !== 0) return shiftStr(v.i, v.n); let o=''; for (let n=1;n<26;n++) o += pad('+'+n,5) + shiftStr(v.i,n) + '\n'; return o; });
+
+add('cod','Vigenère','Cifra o descifra con una clave alfabética repetida.',
+  [se('m','Modo',['Cifrar','Descifrar']), tx('k','Clave','ej: LIMON'), ta('i','Texto')],
+  v => {
+    const k = v.k.toLowerCase().replace(/[^a-z]/g,''); if (!k) throw new Error('La clave debe tener letras (A-Z).');
+    let j = 0; return v.i.replace(/[a-z]/gi, c => { const b = c <= 'Z' ? 65 : 97, sh = (k.charCodeAt(j++ % k.length)-97) * (v.m==='Cifrar'?1:-1); return String.fromCharCode((((c.charCodeAt(0)-b+sh)%26)+26)%26+b); });
+  });
+
+const MORSE = {A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..',0:'-----',1:'.----',2:'..---',3:'...--',4:'....-',5:'.....',6:'-....',7:'--...',8:'---..',9:'----.','.':'.-.-.-',',':'--..--','?':'..--..','/':'-..-.','@':'.--.-.'};
+add('cod','Código Morse','Convierte texto a Morse y Morse a texto (separá letras con espacio y palabras con /).',
+  [se('m','Modo',['Texto a Morse','Morse a texto']), ta('i','Entrada')],
+  v => {
+    if (v.m==='Texto a Morse') return v.i.toUpperCase().split('').map(c => c===' ' ? '/' : (MORSE[c] || '?')).join(' ');
+    const rev = Object.fromEntries(Object.entries(MORSE).map(([a,b]) => [b,a]));
+    return v.i.trim().split(/\s*\/\s*/).map(w => w.split(/\s+/).map(c => rev[c] || '?').join('')).join(' ');
+  });
+
+add('cod','Atbash','Cifrado espejo: A↔Z, B↔Y, C↔X… (se aplica igual para cifrar y descifrar).',
+  [ta('i','Texto')],
+  v => v.i.replace(/[a-z]/gi, c => { const b = c <= 'Z' ? 65 : 97; return String.fromCharCode(b + 25 - (c.charCodeAt(0)-b)); }));
+
+const B32 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+add('cod','Base32','Codifica o decodifica en Base32 (RFC 4648), muy usado en secretos 2FA.',
+  [se('m','Modo',['Codificar','Decodificar']), ta('i','Entrada')],
+  v => {
+    if (v.m==='Codificar'){ let bits='',o=''; enc.encode(v.i).forEach(b => bits += b.toString(2).padStart(8,'0')); for (let i=0;i<bits.length;i+=5) o += B32[parseInt(bits.slice(i,i+5).padEnd(5,'0'),2)]; while (o.length%8) o+='='; return o; }
+    let bits=''; v.i.toUpperCase().replace(/=+$/,'').replace(/\s/g,'').split('').forEach(c => { const x=B32.indexOf(c); if (x<0) throw new Error('Carácter no válido en Base32: '+c); bits += x.toString(2).padStart(5,'0'); });
+    const out=[]; for (let i=0;i+8<=bits.length;i+=8) out.push(parseInt(bits.slice(i,i+8),2)); return u8str(Uint8Array.from(out));
+  });
+
+add('cod','Escapes Unicode','Convierte caracteres no ASCII a \\u{…} y revierte el proceso.',
+  [se('m','Modo',['Escapar','Desescapar']), ta('i','Texto')],
+  v => v.m==='Escapar'
+    ? Array.from(v.i).map(c => c.codePointAt(0) > 127 ? '\\u{' + c.codePointAt(0).toString(16) + '}' : c).join('')
+    : v.i.replace(/\\u\{([0-9a-f]+)\}|\\u([0-9a-f]{4})/gi, (_,a,b) => String.fromCodePoint(parseInt(a||b,16))));
+
+add('cod','XOR','Aplica XOR con una clave o prueba las 256 claves de un byte (típico en análisis de malware y CTF).',
+  [se('e','Entrada',['Texto','Hexadecimal']), se('m','Modo',['Aplicar clave','Fuerza bruta de 1 byte']), tx('k','Clave (texto, para "Aplicar clave")'), ta('i','Datos')],
+  v => {
+    const data = v.e==='Texto' ? enc.encode(v.i) : unhex(v.i);
+    const show = u => u8str(u).replace(/[^\x20-\x7e\n]/g,'·');
+    if (v.m==='Aplicar clave'){
+      if (!v.k) throw new Error('Indicá una clave.'); const key = enc.encode(v.k);
+      const o = data.map((b,i) => b ^ key[i % key.length]); return 'HEX:   ' + hex(o) + '\nTEXTO: ' + show(o);
+    }
+    let out=''; for (let k=0;k<256;k++){ const o = data.map(b => b^k), t = show(o); const ratio = (t.match(/[a-zA-Z0-9 ]/g)||[]).length / (t.length||1); if (ratio > .85) out += '0x' + k.toString(16).padStart(2,'0') + '  ' + t.slice(0,120) + '\n'; }
+    return out || 'Ninguna clave de 1 byte produjo texto legible.';
+  });
+
+add('cod','PowerShell -EncodedCommand','Decodifica comandos PowerShell en Base64 (UTF-16LE), muy común en ataques y análisis de incidentes.',
+  [ta('i','Cadena Base64')],
+  v => new TextDecoder('utf-16le').decode(b64d(v.i)));
+
+/* ============================================================
+   2) HASHES E INTEGRIDAD
+   ============================================================ */
+add('hash','Hash de texto','Calcula MD5, SHA-1, SHA-256, SHA-384 y SHA-512 de un texto al mismo tiempo.',
+  [ta('i','Texto')],
+  async v => { const u = enc.encode(v.i); return 'MD5      ' + md5(u) + '\nSHA-1    ' + hex(await digest('SHA-1',u)) + '\nSHA-256  ' + hex(await digest('SHA-256',u)) + '\nSHA-384  ' + hex(await digest('SHA-384',u)) + '\nSHA-512  ' + hex(await digest('SHA-512',u)); });
+
+add('hash','Hash de archivo','Calcula las huellas de un archivo sin subirlo a ningún servidor (se procesa en tu dispositivo).',
+  [fi('f','Archivo')],
+  async v => { const u = await readFile(v.f); return 'Archivo  ' + v.f.name + '\nTamaño   ' + u.length + ' bytes\n\nMD5      ' + md5(u) + '\nSHA-1    ' + hex(await digest('SHA-1',u)) + '\nSHA-256  ' + hex(await digest('SHA-256',u)) + '\nSHA-512  ' + hex(await digest('SHA-512',u)) + '\nCRC32    ' + crc32(u); });
+
+add('hash','HMAC','Genera un código de autenticación de mensaje con clave secreta.',
+  [se('a','Algoritmo',['SHA-256','SHA-1','SHA-384','SHA-512']), tx('k','Clave secreta'), ta('i','Mensaje')],
+  async v => { const key = await crypto.subtle.importKey('raw', enc.encode(v.k), { name:'HMAC', hash:v.a }, false, ['sign']); return hex(new Uint8Array(await crypto.subtle.sign('HMAC', key, enc.encode(v.i)))); });
+
+add('hash','PBKDF2','Deriva una clave desde una contraseña con sal e iteraciones (cómo se protegen contraseñas de forma correcta).',
+  [tx('p','Contraseña'), tx('s','Sal','ej: sal-aleatoria','sal'), nu('n','Iteraciones',100000), se('a','Hash',['SHA-256','SHA-512','SHA-1'])],
+  async v => { if (v.n < 1 || v.n > 5000000) throw new Error('Iteraciones entre 1 y 5.000.000.'); const base = await crypto.subtle.importKey('raw', enc.encode(v.p), 'PBKDF2', false, ['deriveBits']); const bits = await crypto.subtle.deriveBits({ name:'PBKDF2', salt:enc.encode(v.s), iterations:v.n, hash:v.a }, base, 256); return hex(new Uint8Array(bits)); });
+
+add('hash','CRC32','Suma de verificación CRC32 de un texto.',
+  [ta('i','Texto')],
+  v => crc32(enc.encode(v.i)));
+
+add('hash','Identificador de hash','Adivina de qué tipo es un hash o formato de contraseña según su longitud y estructura.',
+  [ta('i','Hash')],
+  v => {
+    const h = v.i.trim(), r = [];
+    if (/^\$2[aby]\$\d\d\$[./A-Za-z0-9]{53}$/.test(h)) r.push('bcrypt');
+    if (/^\$argon2(id|i|d)\$/.test(h)) r.push('Argon2');
+    if (/^\$1\$/.test(h)) r.push('MD5-crypt (Unix)');
+    if (/^\$5\$/.test(h)) r.push('SHA-256-crypt (Unix)');
+    if (/^\$6\$/.test(h)) r.push('SHA-512-crypt (Unix)');
+    if (/^\$P\$|^\$H\$/.test(h)) r.push('phpass (WordPress / phpBB)');
+    if (/^pbkdf2/i.test(h)) r.push('PBKDF2 con formato de framework');
+    if (/^[a-f0-9]+$/i.test(h)){
+      const L = h.length;
+      if (L===32) r.push('MD5', 'NTLM', 'MD4', 'LM (un bloque)');
+      else if (L===40) r.push('SHA-1', 'MySQL 5.x (con * al inicio, 41 car.)', 'RIPEMD-160');
+      else if (L===56) r.push('SHA-224', 'SHA3-224');
+      else if (L===64) r.push('SHA-256', 'SHA3-256', 'BLAKE2s', 'HMAC-SHA256');
+      else if (L===96) r.push('SHA-384', 'SHA3-384');
+      else if (L===128) r.push('SHA-512', 'SHA3-512', 'BLAKE2b', 'Whirlpool');
+      else if (L===8) r.push('CRC32 / Adler32');
+    }
+    if (/^\*[A-F0-9]{40}$/i.test(h)) r.push('MySQL 4.1+ (SHA-1 doble)');
+    if (/^[A-Za-z0-9+/=]{20,}$/.test(h) && !/^[a-f0-9]+$/i.test(h)) r.push('Posible Base64 (probá la herramienta Base64)');
+    return r.length ? 'Coincidencias posibles:\n - ' + uniq(r).join('\n - ') + '\n\nLongitud: ' + h.length + ' caracteres' : 'No se reconoce el formato.';
+  });
+
+add('hash','Comparador de hashes','Comprueba si dos huellas son idénticas (ignora mayúsculas y espacios). Útil para verificar descargas.',
+  [tx('a','Hash A'), tx('b','Hash B')],
+  v => { const a = v.a.trim().toLowerCase(), b = v.b.trim().toLowerCase(); if (!a || !b) throw new Error('Completá ambos campos.'); return a === b ? '✔ COINCIDEN — los archivos son idénticos.' : '✖ NO COINCIDEN — el archivo fue alterado o es otro distinto.'; });
+
+/* ============================================================
+   3) CONTRASEÑAS Y SECRETOS
+   ============================================================ */
+add('pass','Generador de contraseñas','Crea contraseñas aleatorias con generador criptográfico del navegador.',
+  [nu('n','Longitud',20), nu('q','Cantidad',5), se('c','Caracteres',['Completo (letras, números, símbolos)','Alfanumérico','Solo letras','Solo números'])],
+  v => {
+    const sets = { 'Completo (letras, números, símbolos)':'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.?', 'Alfanumérico':'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789', 'Solo letras':'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'Solo números':'0123456789' };
+    const cs = sets[v.c]; if (v.n < 4 || v.n > 256) throw new Error('Longitud entre 4 y 256.'); if (v.q < 1 || v.q > 50) throw new Error('Cantidad entre 1 y 50.');
+    return Array.from({ length:v.q }, () => Array.from({ length:v.n }, () => cs[rnd(cs.length)]).join('')).join('\n');
+  });
+
+add('pass','Fortaleza y entropía','Estima la entropía de una contraseña y cuánto tardaría en romperse por fuerza bruta.',
+  [tx('p','Contraseña a evaluar')],
+  v => {
+    const p = v.p; if (!p) throw new Error('Escribí una contraseña.');
+    let pool = 0; if (/[a-z]/.test(p)) pool += 26; if (/[A-Z]/.test(p)) pool += 26; if (/[0-9]/.test(p)) pool += 10; if (/[^A-Za-z0-9]/.test(p)) pool += 33;
+    const bits = p.length * Math.log2(pool), guesses = Math.pow(2,bits-1), secs = guesses / 1e10;
+    const fmt = s => s < 1 ? 'menos de 1 segundo' : s < 60 ? Math.round(s)+' segundos' : s < 3600 ? Math.round(s/60)+' minutos' : s < 86400 ? Math.round(s/3600)+' horas' : s < 31536000 ? Math.round(s/86400)+' días' : s < 31536000e6 ? Math.round(s/31536000).toLocaleString('es')+' años' : 'más que la edad del universo';
+    const common = ['123456','password','qwerty','111111','abc123','123456789','12345678','iloveyou','admin','welcome','letmein','contraseña','123123','dragon','monkey','football','000000','1q2w3e','passw0rd'];
+    const warn = []; if (common.some(c => p.toLowerCase().includes(c))) warn.push('Contiene una contraseña muy común.'); if (/(.)\1{2,}/.test(p)) warn.push('Tiene caracteres repetidos seguidos.'); if (/(abc|123|qwe|asd)/i.test(p)) warn.push('Contiene una secuencia predecible.'); if (p.length < 12) warn.push('Menos de 12 caracteres.');
+    const lvl = bits < 40 ? 'MUY DÉBIL' : bits < 60 ? 'DÉBIL' : bits < 80 ? 'ACEPTABLE' : bits < 100 ? 'FUERTE' : 'MUY FUERTE';
+    return 'Longitud:  ' + p.length + '\nConjunto:  ' + pool + ' símbolos posibles\nEntropía:  ' + bits.toFixed(1) + ' bits\nNivel:     ' + lvl + '\nTiempo estimado de fuerza bruta (10 mil millones de intentos/s):\n           ' + fmt(secs) + (warn.length ? '\n\nAvisos:\n - ' + warn.join('\n - ') : '') + '\n\nNota: la entropía real puede ser menor si el patrón es humano y predecible.';
+  });
+
+add('pass','¿Contraseña filtrada? (Pwned Passwords)','Consulta si una contraseña apareció en filtraciones. Solo se envían los 5 primeros caracteres de su hash (k-anonimato).',
+  [tx('p','Contraseña')],
+  async v => {
+    if (!v.p) throw new Error('Escribí una contraseña.');
+    const h = hex(await digest('SHA-1', enc.encode(v.p))).toUpperCase(), pre = h.slice(0,5), suf = h.slice(5);
+    const t = await net('https://api.pwnedpasswords.com/range/' + pre, { text:true });
+    const m = t.split(/\r?\n/).map(l => l.split(':')).find(x => x[0] === suf);
+    return m ? '⚠ FILTRADA — apareció ' + Number(m[1]).toLocaleString('es') + ' veces en filtraciones conocidas. No la uses.' : '✔ No aparece en la base de contraseñas filtradas conocidas.';
+  }, true);
+
+add('pass','Tokens y UUID','Genera identificadores y tokens aleatorios seguros.',
+  [se('t','Tipo',['UUID v4','Hex 32 bytes','Base64 32 bytes','Base64URL 32 bytes','Código numérico de 6 dígitos']), nu('q','Cantidad',5)],
+  v => {
+    if (v.q < 1 || v.q > 100) throw new Error('Cantidad entre 1 y 100.');
+    const one = () => { const b = crypto.getRandomValues(new Uint8Array(32)); switch (v.t){ case 'UUID v4': return crypto.randomUUID(); case 'Hex 32 bytes': return hex(b); case 'Base64 32 bytes': return b64e(b); case 'Base64URL 32 bytes': return b64e(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); default: return String(rnd(1000000)).padStart(6,'0'); } };
+    return Array.from({ length:v.q }, one).join('\n');
+  });
+
+add('pass','Generador TOTP (2FA)','Calcula el código de 6 dígitos de un secreto TOTP (Base32), igual que Google Authenticator. Nada sale de tu dispositivo.',
+  [tx('s','Secreto Base32','ej: JBSWY3DPEHPK3PXP'), nu('d','Dígitos',6), nu('p','Período (segundos)',30)],
+  async v => {
+    const secret = v.s.toUpperCase().replace(/[\s=]/g,''); if (!secret) throw new Error('Ingresá el secreto.');
+    let bits=''; secret.split('').forEach(c => { const x=B32.indexOf(c); if (x<0) throw new Error('El secreto debe estar en Base32 (A-Z y 2-7).'); bits += x.toString(2).padStart(5,'0'); });
+    const kb=[]; for (let i=0;i+8<=bits.length;i+=8) kb.push(parseInt(bits.slice(i,i+8),2));
+    const key = await crypto.subtle.importKey('raw', Uint8Array.from(kb), { name:'HMAC', hash:'SHA-1' }, false, ['sign']);
+    const code = async ctr => { const b = new Uint8Array(8); new DataView(b.buffer).setUint32(4, ctr>>>0); new DataView(b.buffer).setUint32(0, Math.floor(ctr/4294967296)); const h = new Uint8Array(await crypto.subtle.sign('HMAC', key, b)); const o = h[19] & 15; const n = ((h[o]&127)<<24 | h[o+1]<<16 | h[o+2]<<8 | h[o+3]) % Math.pow(10, v.d); return String(n).padStart(v.d,'0'); };
+    const now = Math.floor(Date.now()/1000), c = Math.floor(now / v.p), left = v.p - (now % v.p);
+    return 'Código actual:    ' + await code(c) + '   (vence en ' + left + ' s)\nCódigo siguiente: ' + await code(c+1);
+  });
+
+add('pass','Detector de secretos expuestos','Escanea texto o código pegado en busca de claves de API, tokens y llaves privadas antes de publicarlo.',
+  [ta('i','Texto o código a revisar')],
+  v => {
+    const P = [['Clave de acceso AWS',/AKIA[0-9A-Z]{16}/g],['Clave API de Google',/AIza[0-9A-Za-z_\-]{35}/g],['Token de GitHub',/gh[pousr]_[0-9A-Za-z]{36,}/g],['Token de Slack',/xox[baprs]-[0-9A-Za-z-]{10,}/g],['Clave secreta Stripe',/sk_live_[0-9a-zA-Z]{24,}/g],['Llave privada',/-----BEGIN (?:RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY-----/g],['Token JWT',/eyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}/g],['Asignación de contraseña/secreto',/(?:password|passwd|pwd|secret|api[_-]?key|token)\s*[:=]\s*['"]?[^\s'"]{6,}/gi],['URL con credenciales',/[a-z]+:\/\/[^\s:@\/]+:[^\s@\/]+@[^\s]+/gi]];
+    const ls = lines(v.i), out = [];
+    ls.forEach((l,i) => P.forEach(([n,re]) => { (l.match(re) || []).forEach(m => out.push('Línea ' + (i+1) + '  ' + pad(n,34) + m.slice(0,6) + '…' + m.slice(-3))); }));
+    return out.length ? '⚠ ' + out.length + ' posible(s) secreto(s):\n\n' + out.join('\n') + '\n\nSi alguno es real, revocalo y generá uno nuevo: borrarlo del código no alcanza.' : '✔ No se detectaron patrones de secretos conocidos.';
+  });
+
+/* ============================================================
+   4) ANÁLISIS WEB Y CABECERAS
+   ============================================================ */
+add('web','Auditor de cabeceras HTTP','Pegá las cabeceras de respuesta de un sitio (curl -I o DevTools) y evalúa su seguridad.',
+  [ta('i','Cabeceras de respuesta','HTTP/2 200\nserver: nginx\nstrict-transport-security: max-age=31536000')],
+  v => {
+    const H = {}; lines(v.i).forEach(l => { const i = l.indexOf(':'); if (i > 0) H[l.slice(0,i).trim().toLowerCase()] = l.slice(i+1).trim(); });
+    const chk = [['strict-transport-security','HSTS: obliga a usar HTTPS'],['content-security-policy','CSP: limita qué código puede ejecutarse'],['x-content-type-options','Evita adivinar el tipo de contenido (nosniff)'],['referrer-policy','Controla qué información de origen se envía'],['permissions-policy','Restringe funciones del navegador (cámara, GPS…)'],['cross-origin-opener-policy','Aísla la ventana de otros orígenes'],['cross-origin-resource-policy','Controla quién puede cargar tus recursos']];
+    let ok = 0, o = ''; chk.forEach(([h,d]) => { const p = H[h] !== undefined; if (p) ok++; o += (p ? '✔ ' : '✖ ') + pad(h,30) + d + '\n'; });
+    const fo = H['x-frame-options'] !== undefined || /frame-ancestors/i.test(H['content-security-policy'] || ''); if (fo) ok++; o += (fo ? '✔ ' : '✖ ') + pad('x-frame-options / frame-ancestors',30) + 'Protege contra clickjacking\n';
+    o += '\nFuga de información:\n'; let leak = 0; ['server','x-powered-by','x-aspnet-version','x-generator'].forEach(h => { if (H[h] !== undefined){ leak++; o += '⚠ ' + pad(h,20) + H[h] + '\n'; } }); if (!leak) o += '✔ No se exponen cabeceras de tecnología.\n';
+    if (H['strict-transport-security'] && !/max-age=\d{7,}/.test(H['strict-transport-security'])) o += '\n⚠ HSTS con max-age corto (recomendado: 31536000 o más).';
+    if (H['content-security-policy'] && /unsafe-inline|unsafe-eval|\*/.test(H['content-security-policy'])) o += '\n⚠ La CSP contiene unsafe-inline, unsafe-eval o comodines.';
+    return 'Puntaje: ' + ok + ' / 8\n\n' + o;
+  });
+
+add('web','Analizador de URL','Descompone una URL y detecta señales típicas de phishing (usuario@, IP como host, punycode, subdominios excesivos).',
+  [tx('u','URL','https://ejemplo.com/ruta?x=1')],
+  v => {
+    let u; try { u = new URL(v.u.trim()); } catch { throw new Error('URL no válida. Incluí el protocolo (https://).'); }
+    let o = 'Protocolo   ' + u.protocol + '\nUsuario     ' + (u.username || '—') + '\nHost        ' + u.hostname + '\nPuerto      ' + (u.port || '(por defecto)') + '\nRuta        ' + u.pathname + '\nFragmento   ' + (u.hash || '—') + '\n\nParámetros:\n';
+    let n = 0; u.searchParams.forEach((val,k) => { n++; o += '  ' + k + ' = ' + val + '\n'; }); if (!n) o += '  (ninguno)\n';
+    const f = [], h = u.hostname;
+    if (u.protocol === 'http:') f.push('Sin cifrado (HTTP).'); if (u.username) f.push('Contiene usuario/clave antes del host: truco común de phishing.');
+    if (/^\d+\.\d+\.\d+\.\d+$/.test(h)) f.push('El host es una IP, no un dominio.'); if (/xn--/.test(h)) f.push('Dominio en punycode: puede imitar caracteres de otro alfabeto.');
+    if (h.split('.').length > 4) f.push('Muchos subdominios: revisá cuál es el dominio real (los últimos dos bloques).'); if (v.u.length > 120) f.push('URL muy larga.'); if (u.port && !['80','443'].includes(u.port)) f.push('Puerto no estándar.');
+    return o + '\nSeñales:\n' + (f.length ? ' - ' + f.join('\n - ') : ' Ninguna señal evidente.');
+  });
+
+add('web','Decodificador JWT','Lee el contenido de un token JWT (cabecera y claims) y avisa de configuraciones riesgosas. No verifica la firma.',
+  [ta('i','Token JWT')],
+  v => {
+    const p = v.i.trim().split('.'); if (p.length < 2) throw new Error('Un JWT tiene al menos dos partes separadas por puntos.');
+    const H = JSON.parse(u8str(b64d(p[0]))), P = JSON.parse(u8str(b64d(p[1]))); let o = 'CABECERA\n' + JSON.stringify(H,null,2) + '\n\nCLAIMS\n' + JSON.stringify(P,null,2) + '\n';
+    ['iat','nbf','exp'].forEach(k => { if (typeof P[k] === 'number') o += '\n' + k + ' → ' + new Date(P[k]*1000).toISOString(); });
+    if (P.exp) o += '\n\nEstado: ' + (P.exp*1000 < Date.now() ? 'EXPIRADO' : 'vigente');
+    if (String(H.alg).toLowerCase() === 'none') o += '\n\n⚠ alg = none: el token no está firmado.';
+    return o + '\n\nLa firma NO fue verificada.';
+  });
+
+add('web','Generador de CSP','Arma una cabecera Content-Security-Policy a partir de los orígenes que permitís.',
+  [tx('d','default-src','',"'self'"), tx('s','script-src','',"'self'"), tx('st','style-src','',"'self'"), tx('im','img-src','',"'self' data:"), tx('c','connect-src','',"'self'"), tx('f','frame-ancestors','',"'none'")],
+  v => { const p = [['default-src',v.d],['script-src',v.s],['style-src',v.st],['img-src',v.im],['connect-src',v.c],['frame-ancestors',v.f]].filter(x => x[1].trim()).map(x => x[0] + ' ' + x[1].trim()); p.push("base-uri 'self'","object-src 'none'"); const val = p.join('; '); return 'Content-Security-Policy: ' + val + '\n\nVersión meta (menos completa):\n<meta http-equiv="Content-Security-Policy" content="' + val.replace(/"/g,'&quot;') + '">'; });
+
+add('web','Analizador de robots.txt','Lee un robots.txt y resalta rutas potencialmente sensibles que el sitio intenta ocultar.',
+  [ta('i','Contenido de robots.txt')],
+  v => {
+    const sens = /admin|backup|bak|private|priv|config|conf|secret|internal|db|sql|\.git|\.env|wp-admin|login|staging|test|dev|old|tmp|log/i; let ua = '*', o = '', hit = 0; const sm = [];
+    lines(v.i).forEach(l => { l = l.replace(/#.*/,'').trim(); if (!l) return; const i = l.indexOf(':'); if (i<0) return; const k = l.slice(0,i).trim().toLowerCase(), val = l.slice(i+1).trim();
+      if (k==='user-agent'){ ua = val; o += '\n[' + val + ']\n'; } else if (k==='disallow' || k==='allow'){ const s = sens.test(val); if (s) hit++; o += '  ' + (s?'⚠ ':'  ') + pad(k,9) + val + '\n'; } else if (k==='sitemap') sm.push(val); });
+    return (o || 'Sin reglas.') + (sm.length ? '\nSitemaps:\n  ' + sm.join('\n  ') : '') + '\n\nRutas sensibles detectadas: ' + hit;
+  });
+
+add('web','Analizador de User-Agent','Interpreta una cadena User-Agent: navegador, sistema, dispositivo y si parece un bot.',
+  [ta('i','User-Agent', '', navigator.userAgent)],
+  v => {
+    const u = v.i, pick = (list) => (list.find(([,re]) => re.test(u)) || [,,'Desconocido'])[0] || 'Desconocido';
+    const br = [['Edge',/Edg\//],['Opera',/OPR\/|Opera/],['Chrome',/Chrome\//],['Firefox',/Firefox\//],['Safari',/Safari\//],['curl',/curl\//],['Python requests',/python-requests/i]];
+    const os = [['Windows',/Windows/],['Android',/Android/],['iOS',/iPhone|iPad|iPod/],['macOS',/Mac OS X/],['Linux',/Linux/]];
+    const bot = /bot|crawler|spider|curl|wget|python|scrapy|headless|httpclient/i.test(u);
+    return 'Navegador:   ' + pick(br) + '\nSistema:     ' + pick(os) + '\nDispositivo: ' + (/Mobile|Android|iPhone/.test(u) ? 'Móvil' : /iPad|Tablet/.test(u) ? 'Tablet' : 'Escritorio') + '\nBot/script:  ' + (bot ? 'Sí, parece automatizado' : 'No evidente') + '\nMotor:       ' + (/Gecko\//.test(u) && !/like Gecko/.test(u) ? 'Gecko' : /AppleWebKit/.test(u) ? 'WebKit/Blink' : '—');
+  });
+
+add('web','Analizador de cookies (Set-Cookie)','Revisa los atributos de seguridad de una cookie: Secure, HttpOnly, SameSite, prefijos y duración.',
+  [ta('i','Cabecera Set-Cookie','Set-Cookie: sid=abc123; Path=/; HttpOnly')],
+  v => lines(v.i).filter(l => l.trim()).map(l => {
+    const s = l.replace(/^set-cookie:\s*/i,'').split(';').map(x => x.trim()), [name] = s[0].split('='), a = s.slice(1).map(x => x.toLowerCase()), has = k => a.some(x => x===k || x.startsWith(k+'='));
+    const r = ['Cookie: ' + name]; r.push((has('secure')?'✔':'✖') + ' Secure (solo por HTTPS)'); r.push((has('httponly')?'✔':'✖') + ' HttpOnly (inaccesible para JavaScript)');
+    const ss = a.find(x => x.startsWith('samesite=')); r.push((ss?'✔':'✖') + ' SameSite ' + (ss ? '(' + ss.split('=')[1] + ')' : 'ausente') + (ss && ss.endsWith('none') && !has('secure') ? ' — ⚠ None exige Secure' : ''));
+    if (/^__Host-/.test(name)) r.push('ℹ Prefijo __Host-: exige Secure, Path=/ y sin Domain.'); if (/^__Secure-/.test(name)) r.push('ℹ Prefijo __Secure-: exige Secure.');
+    const ma = a.find(x => x.startsWith('max-age=')); r.push('Duración: ' + (ma ? ma.split('=')[1] + ' s' : has('expires') ? 'con Expires' : 'de sesión')); return r.join('\n');
+  }).join('\n\n') || 'Pegá una cabecera Set-Cookie.');
+
+const HTTP = {100:'Continue — el servidor recibió los encabezados, seguí enviando.',101:'Switching Protocols — cambio de protocolo (p. ej. WebSocket).',200:'OK — solicitud exitosa.',201:'Created — recurso creado.',202:'Accepted — aceptada, se procesa después.',204:'No Content — éxito sin cuerpo.',206:'Partial Content — descarga parcial.',301:'Moved Permanently — redirección permanente.',302:'Found — redirección temporal.',303:'See Other — ver otra URL con GET.',304:'Not Modified — usá tu caché.',307:'Temporary Redirect — conserva el método.',308:'Permanent Redirect — conserva el método.',400:'Bad Request — solicitud mal formada.',401:'Unauthorized — falta autenticación.',403:'Forbidden — autenticado pero sin permiso.',404:'Not Found — recurso inexistente.',405:'Method Not Allowed — método no permitido.',406:'Not Acceptable — formato no aceptable.',408:'Request Timeout — tiempo agotado.',409:'Conflict — conflicto de estado.',410:'Gone — eliminado para siempre.',413:'Payload Too Large — cuerpo demasiado grande.',415:'Unsupported Media Type — tipo no soportado.',418:"I'm a teapot — broma del RFC 2324.",422:'Unprocessable Entity — datos inválidos.',429:'Too Many Requests — límite de tasa superado.',451:'Unavailable For Legal Reasons — bloqueado legalmente.',500:'Internal Server Error — fallo del servidor.',501:'Not Implemented — función no implementada.',502:'Bad Gateway — respuesta inválida del servidor de origen.',503:'Service Unavailable — sobrecarga o mantenimiento.',504:'Gateway Timeout — el servidor de origen no respondió.',505:'HTTP Version Not Supported — versión no soportada.'};
+add('web','Códigos de estado HTTP','Buscá el significado de un código HTTP (404, 502…) o filtrá por palabra.',
+  [tx('q','Código o palabra (vacío = todos)')],
+  v => { const q = v.q.trim().toLowerCase(); const r = Object.entries(HTTP).filter(([c,d]) => !q || c.startsWith(q) || d.toLowerCase().includes(q)); return r.length ? r.map(([c,d]) => c + '  ' + d).join('\n') : 'Sin resultados.'; });
+
+/* ============================================================
+   5) REDES E IP
+   ============================================================ */
+const ip4 = s => { const m = s.trim().match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/); if (!m || m.slice(1).some(x => +x > 255)) return null; return ((+m[1]<<24)|(+m[2]<<16)|(+m[3]<<8)|+m[4])>>>0; };
+const ip4s = n => [n>>>24, (n>>>16)&255, (n>>>8)&255, n&255].join('.');
+const maskOf = b => b === 0 ? 0 : (0xFFFFFFFF << (32-b)) >>> 0;
+const bin32 = n => n.toString(2).padStart(32,'0').replace(/(.{8})(?=.)/g,'$1.');
+
+add('net','Calculadora de subredes (CIDR)','Dada una IP con prefijo (192.168.1.10/24) calcula red, broadcast, máscara y rango de hosts.',
+  [tx('c','IP/prefijo','192.168.1.10/24')],
+  v => {
+    const [a,b] = v.c.trim().split('/'), ip = ip4(a), bits = parseInt(b,10); if (ip === null || !(bits >= 0 && bits <= 32)) throw new Error('Formato inválido. Ejemplo: 10.0.0.5/16');
+    const m = maskOf(bits), net_ = (ip & m)>>>0, bc = (net_ | (~m>>>0))>>>0, tot = Math.pow(2, 32-bits), hosts = bits >= 31 ? tot : tot-2;
+    return 'Dirección   ' + ip4s(ip) + '\nRed         ' + ip4s(net_) + '/' + bits + '\nMáscara     ' + ip4s(m) + '\nWildcard    ' + ip4s((~m)>>>0) + '\nBroadcast   ' + ip4s(bc) + '\nPrimer host ' + ip4s(bits>=31 ? net_ : net_+1) + '\nÚltimo host ' + ip4s(bits>=31 ? bc : bc-1) + '\nDirecciones ' + tot.toLocaleString('es') + '\nHosts útiles ' + hosts.toLocaleString('es') + '\n\nBinario     ' + bin32(ip);
+  });
+
+add('net','Convertidor de direcciones IPv4','Convierte una IPv4 entre notación decimal con puntos, entero, hexadecimal y binario.',
+  [tx('i','Dirección','ej: 192.168.0.1, 3232235521 o 0xC0A80001')],
+  v => { const s = v.i.trim(); let n = s.includes('.') ? ip4(s) : /^0x/i.test(s) ? parseInt(s,16)>>>0 : /^\d+$/.test(s) ? Number(s) : null; if (n === null || isNaN(n) || n > 4294967295) throw new Error('Valor no válido.'); return 'Decimal con puntos  ' + ip4s(n) + '\nEntero              ' + n + '\nHexadecimal         0x' + n.toString(16).toUpperCase().padStart(8,'0') + '\nBinario             ' + bin32(n) + '\nOctal               0' + n.toString(8); });
+
+const V4_CLASSES = [['0.0.0.0',8,'"Esta red" (no enrutable)'],['10.0.0.0',8,'Privada (RFC 1918)'],['100.64.0.0',10,'CGNAT (RFC 6598)'],['127.0.0.0',8,'Loopback'],['169.254.0.0',16,'Link-local (APIPA)'],['172.16.0.0',12,'Privada (RFC 1918)'],['192.0.0.0',24,'Protocolo IETF'],['192.0.2.0',24,'Documentación (TEST-NET-1)'],['192.168.0.0',16,'Privada (RFC 1918)'],['198.18.0.0',15,'Pruebas de rendimiento'],['198.51.100.0',24,'Documentación (TEST-NET-2)'],['203.0.113.0',24,'Documentación (TEST-NET-3)'],['224.0.0.0',4,'Multicast'],['240.0.0.0',4,'Reservada (clase E)'],['255.255.255.255',32,'Broadcast limitado']];
+add('net','Clasificador de IP','Indica si una IP es pública, privada, loopback, multicast, reservada, etc. (IPv4 e IPv6).',
+  [tx('i','Dirección IP')],
+  v => {
+    const s = v.i.trim(), n = ip4(s);
+    if (n !== null){ const m = V4_CLASSES.find(([b,p]) => ((n & maskOf(p))>>>0) === ip4(b)); return s + '\n' + (m ? 'Tipo: ' + m[2] + '\nBloque: ' + m[0] + '/' + m[1] : 'Tipo: Pública (enrutable en internet)'); }
+    if (s.includes(':')){ const l = s.toLowerCase(); let t = 'Pública / global unicast'; if (l === '::1') t = 'Loopback'; else if (l === '::') t = 'No especificada'; else if (/^fe[89ab]/.test(l)) t = 'Link-local (fe80::/10)'; else if (/^f[cd]/.test(l)) t = 'Única local, privada (fc00::/7)'; else if (/^ff/.test(l)) t = 'Multicast (ff00::/8)'; else if (/^2001:0?db8/.test(l)) t = 'Documentación (2001:db8::/32)'; else if (/^::ffff:/.test(l)) t = 'IPv4 mapeada a IPv6'; return s + '\nTipo: ' + t; }
+    throw new Error('No es una IP válida.');
+  });
+
+add('net','Máscara ↔ CIDR','Convierte entre máscara de subred (255.255.255.0) y prefijo (/24).',
+  [tx('i','Máscara o prefijo','255.255.255.0  o  /24')],
+  v => { const s = v.i.trim().replace('/',''); if (s.includes('.')){ const n = ip4(s); if (n === null) throw new Error('Máscara inválida.'); const b = n.toString(2); if (!/^1*0*$/.test(b.padStart(32,'0'))) throw new Error('No es una máscara contigua válida.'); return '/' + (b.match(/1/g)||[]).length; } const b = parseInt(s,10); if (!(b >= 0 && b <= 32)) throw new Error('Prefijo entre 0 y 32.'); return ip4s(maskOf(b)) + '   (' + Math.pow(2,32-b).toLocaleString('es') + ' direcciones)'; });
+
+function ip6full(s){
+  s = s.trim().toLowerCase(); if (!/^[0-9a-f:.]+$/.test(s) || !s.includes(':')) throw new Error('No es una IPv6 válida.');
+  const v4 = s.match(/(\d+\.\d+\.\d+\.\d+)$/); if (v4){ const n = ip4(v4[1]); if (n===null) throw new Error('IPv4 embebida inválida.'); s = s.replace(v4[1], ((n>>>16).toString(16)) + ':' + ((n&65535).toString(16))); }
+  let [h,t] = s.split('::'); const A = h ? h.split(':') : [], B = t !== undefined && t ? t.split(':') : [];
+  if (t === undefined){ if (A.length !== 8) throw new Error('IPv6 incompleta.'); return A.map(x => x.padStart(4,'0')); }
+  const miss = 8 - A.length - B.length; if (miss < 1) throw new Error('IPv6 inválida.');
+  return [...A, ...Array(miss).fill('0'), ...B].map(x => x.padStart(4,'0'));
+}
+const arpaOf = s => { const n = ip4(s); if (n !== null) return s.trim().split('.').reverse().join('.') + '.in-addr.arpa'; return ip6full(s).join('').split('').reverse().join('.') + '.ip6.arpa'; };
+add('net','Nombre DNS inverso (arpa)','Genera el nombre in-addr.arpa / ip6.arpa de una IP para consultas PTR, y expande IPv6.',
+  [tx('i','IPv4 o IPv6')],
+  v => { const s = v.i.trim(); return (s.includes(':') ? 'IPv6 completa: ' + ip6full(s).join(':') + '\n' : '') + 'Nombre PTR:   ' + arpaOf(s); });
+
+add('net','Analizador de MAC','Interpreta una dirección MAC: formatos, OUI, unicast/multicast, local/global y su IPv6 EUI-64.',
+  [tx('i','Dirección MAC','00:1A:2B:3C:4D:5E')],
+  v => {
+    const h = v.i.replace(/[^0-9a-f]/gi,'').toLowerCase(); if (h.length !== 12) throw new Error('Una MAC tiene 12 dígitos hexadecimales.');
+    const b = h.match(/../g), f = parseInt(b[0],16), eui = [(f ^ 2).toString(16).padStart(2,'0'), b[1], b[2], 'ff', 'fe', b[3], b[4], b[5]];
+    return 'Con dos puntos  ' + b.join(':').toUpperCase() + '\nCon guiones     ' + b.join('-').toUpperCase() + '\nFormato Cisco   ' + h.match(/.{4}/g).join('.') + '\nOUI (fabricante) ' + b.slice(0,3).join(':').toUpperCase() + '  (buscalo en el registro IEEE)\nTipo            ' + ((f&1) ? 'Multicast/broadcast' : 'Unicast') + '\nAdministración  ' + ((f&2) ? 'Local (posiblemente aleatoria/virtual)' : 'Universal (asignada por fabricante)') + '\nIPv6 link-local fe80::' + [eui[0]+eui[1], eui[2]+eui[3], eui[4]+eui[5], eui[6]+eui[7]].map(x => x.replace(/^0+(?=.)/,'')).join(':');
+  });
+
+const PORTS = {20:'FTP datos',21:'FTP control',22:'SSH',23:'Telnet (sin cifrar)',25:'SMTP',53:'DNS',67:'DHCP servidor',68:'DHCP cliente',69:'TFTP',80:'HTTP',88:'Kerberos',110:'POP3',111:'RPC',119:'NNTP',123:'NTP',135:'MS RPC',137:'NetBIOS nombre',139:'NetBIOS sesión',143:'IMAP',161:'SNMP',162:'SNMP trap',179:'BGP',389:'LDAP',443:'HTTPS',445:'SMB',465:'SMTPS',514:'Syslog',515:'LPD (impresión)',587:'SMTP envío (STARTTLS)',631:'IPP (impresión)',636:'LDAPS',873:'rsync',993:'IMAPS',995:'POP3S',1080:'SOCKS proxy',1194:'OpenVPN',1433:'Microsoft SQL Server',1521:'Oracle DB',1723:'PPTP VPN',2049:'NFS',2375:'Docker sin TLS',2376:'Docker con TLS',3000:'Node/Grafana (dev)',3306:'MySQL/MariaDB',3389:'RDP (Escritorio remoto)',4444:'Metasploit (por defecto)',5060:'SIP',5432:'PostgreSQL',5601:'Kibana',5672:'RabbitMQ',5900:'VNC',5985:'WinRM HTTP',5986:'WinRM HTTPS',6379:'Redis',6443:'Kubernetes API',8000:'HTTP alternativo',8080:'HTTP alternativo/proxy',8443:'HTTPS alternativo',8888:'Jupyter/HTTP alt.',9000:'SonarQube/PHP-FPM',9090:'Prometheus/Cockpit',9200:'Elasticsearch',9300:'Elasticsearch nodos',11211:'Memcached',27017:'MongoDB',51820:'WireGuard'};
+add('net','Puertos comunes','Buscá qué servicio usa un puerto, o qué puerto usa un servicio.',
+  [tx('q','Puerto o nombre (vacío = todos)')],
+  v => { const q = v.q.trim().toLowerCase(), r = Object.entries(PORTS).filter(([p,n]) => !q || p === q || n.toLowerCase().includes(q)); return r.length ? r.map(([p,n]) => pad(p,7) + n).join('\n') : 'Sin resultados.'; });
+
+const DNSREF = {A:'Dirección IPv4 de un nombre.',AAAA:'Dirección IPv6 de un nombre.',CNAME:'Alias: un nombre apunta a otro.',MX:'Servidores de correo del dominio, con prioridad.',NS:'Servidores de nombres autoritativos.',TXT:'Texto libre: SPF, DKIM, DMARC, verificaciones de propiedad.',SOA:'Datos de la zona: servidor primario, serial, tiempos.',PTR:'Resolución inversa: IP a nombre.',SRV:'Ubicación de un servicio (host y puerto).',CAA:'Qué autoridades pueden emitir certificados para el dominio.',DS:'Firma de delegación DNSSEC.',DNSKEY:'Clave pública DNSSEC.',NAPTR:'Reescritura de nombres (telefonía/SIP).',HTTPS:'Parámetros de conexión HTTPS/HTTP3 del sitio.',TLSA:'Asocia certificados TLS a un servicio (DANE).',SSHFP:'Huella de clave SSH del servidor.',ANY:'Solicitud de todos los registros (muchos servidores la rechazan).'};
+add('net','Registros DNS (referencia)','Explica qué hace cada tipo de registro DNS.',
+  [tx('q','Tipo o palabra (vacío = todos)')],
+  v => { const q = v.q.trim().toLowerCase(), r = Object.entries(DNSREF).filter(([k,d]) => !q || k.toLowerCase().includes(q) || d.toLowerCase().includes(q)); return r.length ? r.map(([k,d]) => pad(k,8) + d).join('\n') : 'Sin resultados.'; });
+/* ============================================================
+   6) DNS Y CORREO
+   ============================================================ */
+const DTYPES = ['A','AAAA','MX','TXT','NS','CNAME','SOA','CAA','SRV','DNSKEY','DS'];
+const dname = s => { const d = s.trim().toLowerCase().replace(/^https?:\/\//,'').replace(/\/.*$/,'').replace(/\.$/,''); if (!/^[a-z0-9._-]+\.[a-z0-9-]{2,}$/.test(d)) throw new Error('Ingresá un dominio válido, por ejemplo ejemplo.com'); return d; };
+const dstat = j => ({0:'OK',2:'SERVFAIL (el servidor falló)',3:'NXDOMAIN (no existe)'}[j.Status] || 'Código ' + j.Status);
+
+add('dns','Consulta DNS','Consulta registros DNS reales (A, MX, TXT, NS…) usando DNS sobre HTTPS de Google o Cloudflare.',
+  [tx('d','Dominio','ejemplo.com'), se('t','Tipo',DTYPES), se('r','Resolver',['Google','Cloudflare'])],
+  async v => { const j = await doh(dname(v.d), v.t, v.r==='Cloudflare'?'cf':'g'), l = dohLines(j); return 'Estado: ' + dstat(j) + (j.AD ? ' · DNSSEC validado' : '') + '\n\n' + (l.length ? l.join('\n') : 'Sin registros de ese tipo.'); }, true);
+
+add('dns','Comparar resolvers','Consulta el mismo dominio en Google y Cloudflare y marca diferencias (útil para detectar propagación o filtrado DNS).',
+  [tx('d','Dominio','ejemplo.com'), se('t','Tipo',['A','AAAA','MX','TXT','NS'])],
+  async v => {
+    const d = dname(v.d), [g,c] = await Promise.all([doh(d,v.t,'g'), doh(d,v.t,'cf')]);
+    const sg = uniq((g.Answer||[]).map(a => a.data)).sort(), sc = uniq((c.Answer||[]).map(a => a.data)).sort();
+    return 'GOOGLE (' + dstat(g) + ')\n  ' + (sg.join('\n  ') || '—') + '\n\nCLOUDFLARE (' + dstat(c) + ')\n  ' + (sc.join('\n  ') || '—') + '\n\n' + (JSON.stringify(sg) === JSON.stringify(sc) ? '✔ Ambos resolvers coinciden.' : '⚠ Hay diferencias: puede ser balanceo de carga geográfico, propagación en curso o filtrado.');
+  }, true);
+
+add('dns','Chequeo de correo del dominio','Revisa MX, SPF y DMARC de un dominio y resume su protección contra suplantación de identidad.',
+  [tx('d','Dominio','ejemplo.com')],
+  async v => {
+    const d = dname(v.d), [mx,tx_,dm] = await Promise.all([doh(d,'MX'), doh(d,'TXT'), doh('_dmarc.' + d,'TXT')]);
+    const spf = txtOf(tx_).filter(t => /^v=spf1/i.test(t)), dmarc = txtOf(dm).filter(t => /^v=DMARC1/i.test(t)), m = (mx.Answer||[]).filter(a => a.type === 15).map(a => a.data);
+    let o = 'MX (servidores de correo)\n' + (m.length ? m.map(x => '  ' + x).join('\n') : '  ✖ Sin registros MX: el dominio no recibe correo.') + '\n\nSPF\n' + (spf.length ? '  ✔ ' + spf[0] : '  ✖ No hay registro SPF.') + '\n\nDMARC\n' + (dmarc.length ? '  ✔ ' + dmarc[0] : '  ✖ No hay registro DMARC.');
+    const pol = (dmarc[0]||'').match(/p=(\w+)/i);
+    o += '\n\nResumen: ';
+    if (!spf.length || !dmarc.length) o += 'Faltan controles: el dominio es fácil de suplantar por correo.';
+    else if (pol && pol[1].toLowerCase() === 'none') o += 'DMARC solo monitorea (p=none): no bloquea suplantaciones.';
+    else o += 'Configuración de autenticación presente (DMARC p=' + (pol ? pol[1] : '?') + ').';
+    return o;
+  }, true);
+
+add('dns','Buscar clave DKIM','Consulta el registro DKIM de un selector (selector._domainkey.dominio) y estima la fuerza de la clave.',
+  [tx('d','Dominio','ejemplo.com'), tx('s','Selector','ej: google, selector1, default','default')],
+  async v => {
+    const d = dname(v.d), sel = v.s.trim(); if (!/^[a-z0-9._-]+$/i.test(sel)) throw new Error('Selector inválido.');
+    const j = await doh(sel + '._domainkey.' + d, 'TXT'), t = txtOf(j).join('');
+    if (!t) return 'No se encontró registro DKIM para ese selector (' + dstat(j) + ').';
+    const p = (t.match(/p=([A-Za-z0-9+/=]+)/) || [])[1] || '', bits = p.length > 300 ? '~2048 bits o más (adecuada)' : p.length > 150 ? '~1024 bits (débil, conviene migrar a 2048)' : 'muy corta o revocada';
+    return 'Registro:\n' + t + '\n\nClave pública: ' + (p ? p.length + ' caracteres → ' + bits : 'vacía (clave revocada)');
+  }, true);
+
+add('dns','Resolución inversa (PTR)','Obtiene el nombre de host asociado a una dirección IP.',
+  [tx('i','Dirección IP')],
+  async v => { const a = arpaOf(v.i), j = await doh(a,'PTR'), l = dohLines(j); return 'Consulta: ' + a + '\n\n' + (l.length ? l.join('\n') : 'Sin registro PTR (' + dstat(j) + ').'); }, true);
+
+add('dns','Listas negras (DNSBL)','Comprueba si una IPv4 figura en varias listas de spam y abuso.',
+  [tx('i','Dirección IPv4')],
+  async v => {
+    if (ip4(v.i) === null) throw new Error('Ingresá una IPv4 válida.');
+    const rev = v.i.trim().split('.').reverse().join('.'), Z = ['bl.spamcop.net','dnsbl.dronebl.org','b.barracudacentral.org','all.s5h.net','psbl.surriel.com'];
+    const R = await Promise.allSettled(Z.map(z => doh(rev + '.' + z, 'A'))); let listed = 0;
+    const o = R.map((r,i) => { if (r.status !== 'fulfilled') return '?  ' + Z[i] + '  (sin respuesta)'; if (r.value.Answer && r.value.Answer.length){ listed++; return '⚠ ' + Z[i] + '  LISTADA'; } return '✔ ' + Z[i] + '  limpia'; }).join('\n');
+    return o + '\n\nListas que la reportan: ' + listed + ' de ' + Z.length + '\nNota: algunas listas limitan consultas desde resolvers públicos; un "?" no significa que esté limpia.';
+  }, true);
+
+add('dns','Analizador SPF','Explica un registro SPF: mecanismos, consultas DNS usadas (límite 10) y política final.',
+  [ta('i','Registro SPF','v=spf1 include:_spf.google.com ~all')],
+  v => {
+    const s = v.i.trim().replace(/^"|"$/g,'').replace(/"\s*"/g,''); if (!/^v=spf1/i.test(s)) throw new Error('Debe empezar por v=spf1');
+    const Q = {'+':'permite','-':'RECHAZA','~':'marca como sospechoso (softfail)','?':'neutral'}; let n = 0, o = '', all = null;
+    s.split(/\s+/).slice(1).forEach(t => { const q = /^[+\-~?]/.test(t) ? t[0] : '+', b = t.replace(/^[+\-~?]/,''), m = b.split(/[:=\/]/)[0].toLowerCase(); if (['include','a','mx','ptr','exists','redirect'].includes(m)) n++; if (m === 'all') all = q; o += pad(t,44) + (m === 'all' ? 'todo lo demás: ' + Q[q] : m === 'ip4' || m === 'ip6' ? 'IP autorizada' : m === 'include' ? 'hereda la política de otro dominio' : m === 'redirect' ? 'usa la política de otro dominio' : m === 'a' || m === 'mx' ? 'autoriza según registro ' + m.toUpperCase() : m === 'ptr' ? '⚠ mecanismo obsoleto' : '') + '\n'; });
+    return o + '\nConsultas DNS requeridas: ' + n + ' / 10' + (n > 10 ? '  ⚠ SUPERA EL LÍMITE: el SPF fallará (permerror)' : '') + '\nPolítica final: ' + (all === '-' ? '✔ estricta (-all)' : all === '~' ? '~ blanda (~all), aceptable con DMARC' : all === '+' ? '⚠ PELIGROSA (+all): cualquiera puede enviar como este dominio' : all === '?' ? '⚠ neutral (?all): no protege' : 'no hay "all" final (usa redirect o está incompleto)');
+  });
+
+add('dns','Analizador DMARC','Interpreta un registro DMARC y sugiere mejoras.',
+  [ta('i','Registro DMARC','v=DMARC1; p=none; rua=mailto:dmarc@ejemplo.com')],
+  v => {
+    const s = v.i.trim().replace(/^"|"$/g,''); if (!/^v=DMARC1/i.test(s)) throw new Error('Debe empezar por v=DMARC1');
+    const t = {}; s.split(';').forEach(x => { const i = x.indexOf('='); if (i > 0) t[x.slice(0,i).trim().toLowerCase()] = x.slice(i+1).trim(); });
+    const P = { none:'solo monitorea, no bloquea', quarantine:'envía a spam los mensajes que fallan', reject:'rechaza los mensajes que fallan (máxima protección)' };
+    let o = 'Política (p):        ' + t.p + ' → ' + (P[t.p] || 'valor no válido') + '\nSubdominios (sp):    ' + (t.sp || 'igual que p') + '\nPorcentaje (pct):    ' + (t.pct || '100') + '%\nAlineación DKIM:     ' + (t.adkim || 'r (relajada)') + '\nAlineación SPF:      ' + (t.aspf || 'r (relajada)') + '\nReportes agregados:  ' + (t.rua || '✖ no configurado') + '\nReportes forenses:   ' + (t.ruf || '—') + '\n\nSugerencias:\n';
+    const sg = []; if (t.p === 'none') sg.push('Tras revisar los reportes, subí a quarantine y luego a reject.'); if (!t.rua) sg.push('Agregá rua=mailto:… para recibir reportes.'); if (t.pct && +t.pct < 100) sg.push('pct menor a 100 deja parte del tráfico sin proteger.');
+    return o + (sg.length ? ' - ' + sg.join('\n - ') : ' Sin observaciones.');
+  });
+
+add('dns','Analizador de cabeceras de email','Pegá las cabeceras completas de un correo: traza el recorrido, compara remitentes y lee SPF/DKIM/DMARC.',
+  [ta('i','Cabeceras completas del correo')],
+  v => {
+    const raw = v.i.replace(/\r?\n[ \t]+/g,' '), H = []; lines(raw).forEach(l => { const i = l.indexOf(':'); if (i > 0) H.push([l.slice(0,i).trim().toLowerCase(), l.slice(i+1).trim()]); });
+    const get = k => H.filter(h => h[0] === k).map(h => h[1]), one = k => get(k)[0] || '—', rec = get('received').reverse();
+    let o = 'De:            ' + one('from') + '\nResponder a:   ' + one('reply-to') + '\nReturn-Path:   ' + one('return-path') + '\nPara:          ' + one('to') + '\nAsunto:        ' + one('subject') + '\nFecha:         ' + one('date') + '\nMessage-ID:    ' + one('message-id') + '\nIP de origen:  ' + one('x-originating-ip') + '\n\nRECORRIDO (del origen al destino)\n';
+    o += rec.length ? rec.map((r,i) => (i+1) + '. ' + r.slice(0,200)).join('\n') : '  (sin cabeceras Received)'; o += '\n\nAUTENTICACIÓN\n';
+    const ar = get('authentication-results').join(' ; '); ['spf','dkim','dmarc'].forEach(k => { const m = ar.match(new RegExp(k + '=(\\w+)','i')); o += pad(k.toUpperCase(),7) + (m ? (/pass/i.test(m[1]) ? '✔ ' : '✖ ') + m[1] : '— no informado') + '\n'; });
+    const dom = s => ((s.match(/@([\w.-]+)/) || [])[1] || '').toLowerCase(), df = dom(one('from')), dr = dom(one('return-path')), dy = dom(one('reply-to'));
+    o += '\nSEÑALES\n'; const sg = []; if (df && dr && df !== dr) sg.push('El dominio de From (' + df + ') difiere de Return-Path (' + dr + ').'); if (dy && df && dy !== df) sg.push('Reply-To apunta a otro dominio (' + dy + '): típico de fraude.');
+    return o + (sg.length ? ' - ' + sg.join('\n - ') : ' Sin discrepancias evidentes de dominio.');
+  });
+
+const DISP = ['mailinator.com','guerrillamail.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','throwawaymail.com','trashmail.com','getnada.com','sharklasers.com','maildrop.cc','dispostable.com','fakeinbox.com','mintemail.com','mytemp.email','tempr.email','emailondeck.com','spamgourmet.com','moakt.com','burnermail.io','mohmal.com','tmail.ws','discard.email','33mail.com','anonaddy.com'];
+add('dns','Correo desechable','Verifica si un correo usa un dominio de buzón temporal conocido (lista local).',
+  [tx('i','Correo o dominio','usuario@dominio.com')],
+  v => { const d = (v.i.split('@').pop() || '').trim().toLowerCase(); if (!d) throw new Error('Ingresá un correo o dominio.'); const free = ['gmail.com','outlook.com','hotmail.com','yahoo.com','icloud.com','proton.me','protonmail.com','live.com']; return DISP.includes(d) ? '⚠ ' + d + ' es un servicio de correo desechable.' : free.includes(d) ? 'ℹ ' + d + ' es un proveedor gratuito común (no desechable).' : '✔ ' + d + ' no figura en la lista de desechables conocidos.\n(La lista local es corta: no es exhaustiva.)'; });
+
+/* ============================================================
+   7) INTELIGENCIA DE IPs Y DOMINIOS (EN VIVO)
+   ============================================================ */
+add('intel','Geolocalización de IP','Ubicación aproximada, proveedor y ASN de una IP. Sin IP muestra la tuya.',
+  [tx('i','Dirección IP (vacío = la tuya)')],
+  async v => { const j = await net('https://ipwho.is/' + encodeURIComponent(v.i.trim())); if (j.success === false) throw new Error(j.message || 'IP no válida.'); const c = j.connection || {}; return 'IP          ' + j.ip + ' (' + j.type + ')\nPaís        ' + j.country + ' (' + j.country_code + ')\nRegión      ' + j.region + '\nCiudad      ' + j.city + '\nCoordenadas ' + j.latitude + ', ' + j.longitude + '\nHuso        ' + ((j.timezone||{}).id || '—') + '\nASN         AS' + c.asn + '\nOrganización ' + c.org + '\nProveedor   ' + c.isp + '\nDominio     ' + (c.domain || '—') + '\n\nLa geolocalización por IP es aproximada (ciudad, no dirección).'; }, true);
+
+add('intel','Exposición de una IP (Shodan InternetDB)','Puertos abiertos, tecnologías y vulnerabilidades conocidas que Shodan tiene indexadas para una IP.',
+  [tx('i','Dirección IP')],
+  async v => { if (ip4(v.i) === null && !v.i.includes(':')) throw new Error('Ingresá una IP válida.'); let j; try { j = await net('https://internetdb.shodan.io/' + encodeURIComponent(v.i.trim())); } catch (e){ if (e.http === 404) return 'Shodan no tiene datos de esta IP (no expone servicios indexados).'; throw e; } return 'IP         ' + j.ip + '\nHostnames  ' + (j.hostnames.join(', ') || '—') + '\nPuertos    ' + (j.ports.join(', ') || '—') + '\nEtiquetas  ' + (j.tags.join(', ') || '—') + '\nCPE        ' + (j.cpes.join(', ') || '—') + '\nCVE        ' + (j.vulns.length ? j.vulns.join(', ') : 'ninguna indexada'); }, true);
+
+add('intel','ASN y prefijos (BGP)','Dada una IP o un ASN (AS15169), muestra quién anuncia esa red en internet.',
+  [tx('i','IP o ASN','8.8.8.8  o  AS15169')],
+  async v => {
+    const s = v.i.trim();
+    if (/^(as)?\d+$/i.test(s) && !s.includes('.')){ const n = s.replace(/^as/i,''), j = (await net('https://api.bgpview.io/asn/' + n)).data; return 'AS' + j.asn + '\nNombre       ' + j.name + '\nDescripción  ' + (j.description_short || '—') + '\nPaís         ' + (j.country_code || '—') + '\nContactos    ' + ((j.email_contacts || []).join(', ') || '—') + '\nAbuso        ' + ((j.abuse_contacts || []).join(', ') || '—'); }
+    if (ip4(s) === null && !s.includes(':')) throw new Error('Ingresá una IP o un ASN.');
+    const j = (await net('https://api.bgpview.io/ip/' + encodeURIComponent(s))).data; return 'IP ' + j.ip + '\nPTR  ' + (j.ptr_record || '—') + '\n\nPrefijos que la contienen:\n' + ((j.prefixes || []).map(p => '  ' + pad(p.prefix,22) + 'AS' + p.asn.asn + '  ' + p.asn.name + ' — ' + (p.asn.description || '')).join('\n') || '  —') + '\n\nAsignación RIR: ' + ((j.rir_allocation || {}).rir_name || '—');
+  }, true);
+
+const rdapEv = j => (j.events || []).map(e => '  ' + pad(e.eventAction,22) + e.eventDate).join('\n') || '  —';
+const vcardName = e => { const c = (e.vcardArray || [])[1] || []; const f = c.find(x => x[0] === 'fn'); return f ? f[3] : ''; };
+add('intel','WHOIS de dominio (RDAP)','Fechas de registro, vencimiento, estado, registrador y servidores DNS de un dominio.',
+  [tx('d','Dominio','ejemplo.com')],
+  async v => { const d = dname(v.d), j = await net('https://rdap.org/domain/' + d); return 'Dominio     ' + (j.ldhName || d) + '\nEstado      ' + ((j.status || []).join(', ') || '—') + '\n\nEventos\n' + rdapEv(j) + '\n\nServidores DNS\n' + ((j.nameservers || []).map(n => '  ' + n.ldhName).join('\n') || '  —') + '\n\nEntidades\n' + ((j.entities || []).map(e => '  ' + pad((e.roles || []).join('/'),16) + (vcardName(e) || e.handle || '')).join('\n') || '  —'); }, true);
+
+add('intel','WHOIS de IP (RDAP)','Bloque de red, propietario y país de una dirección IP según los registros regionales (ARIN, RIPE, LACNIC…).',
+  [tx('i','Dirección IP')],
+  async v => { if (ip4(v.i) === null && !v.i.includes(':')) throw new Error('Ingresá una IP válida.'); const j = await net('https://rdap.org/ip/' + encodeURIComponent(v.i.trim())); return 'Nombre   ' + (j.name || '—') + '\nHandle   ' + (j.handle || '—') + '\nRango    ' + j.startAddress + ' → ' + j.endAddress + '\nPaís     ' + (j.country || '—') + '\nTipo     ' + (j.type || '—') + '\n\nEventos\n' + rdapEv(j) + '\n\nEntidades\n' + ((j.entities || []).map(e => '  ' + pad((e.roles || []).join('/'),16) + (vcardName(e) || e.handle || '')).join('\n') || '  —'); }, true);
+
+add('intel','Historial web (Wayback Machine)','Busca copias archivadas de una URL en el tiempo.',
+  [tx('u','URL o dominio','ejemplo.com')],
+  async v => {
+    const u = v.u.trim(); if (!u) throw new Error('Ingresá una URL o dominio.'); const links = [];
+    const a = await net('https://archive.org/wayback/available?url=' + encodeURIComponent(u)); const s = a.archived_snapshots && a.archived_snapshots.closest;
+    let o = s ? 'Copia más cercana: ' + s.timestamp + ' (HTTP ' + s.status + ')' : 'No hay copias archivadas.'; if (s) links.push({ l:'Abrir copia más reciente', u:s.url.replace(/^http:/,'https:') });
+    try { const c = await net('https://web.archive.org/cdx/search/cdx?url=' + encodeURIComponent(u) + '&output=json&limit=15&fl=timestamp,statuscode,original&collapse=timestamp:6'); if (c.length > 1){ o += '\n\nCapturas (una por mes):\n' + c.slice(1).map(r => '  ' + r[0].replace(/^(\d{4})(\d\d)(\d\d).*/,'$1-$2-$3') + '  HTTP ' + r[1] + '  ' + r[2]).join('\n'); c.slice(1,4).forEach(r => links.push({ l:'Copia ' + r[0].slice(0,8), u:'https://web.archive.org/web/' + r[0] + '/' + r[2] })); } } catch (e){ /* el índice es opcional */ }
+    return { t:o, links };
+  }, true);
+
+add('intel','Subdominios por certificados (crt.sh)','Descubre subdominios a partir de los certificados TLS emitidos públicamente (Certificate Transparency).',
+  [tx('d','Dominio','ejemplo.com')],
+  async v => { const d = dname(v.d), j = await net('https://crt.sh/?q=%25.' + d + '&output=json', { timeout:30000 }); const names = uniq(j.flatMap(c => String(c.name_value).split('\n')).map(n => n.replace(/^\*\./,'').toLowerCase())).sort(); return names.length + ' nombre(s) único(s) encontrados:\n\n' + names.slice(0,400).join('\n') + (names.length > 400 ? '\n… (' + (names.length-400) + ' más)' : ''); }, true);
+
+/* ============================================================
+   8) GEOLOCALIZACIÓN OSINT
+   ============================================================ */
+function parseCoord(s){
+  s = s.trim(); let m = s.match(/^(-?\d+(?:\.\d+)?)\s*[,;\s]\s*(-?\d+(?:\.\d+)?)$/); if (m) return [+m[1], +m[2]];
+  const g = [...s.matchAll(/(\d+)\s*[°º]\s*(\d+)?\s*['′]?\s*([\d.]+)?\s*["″]?\s*([NSEWnsew])/g)]; if (g.length === 2){ const f = x => (+x[1] + (+x[2]||0)/60 + (+x[3]||0)/3600) * (/[SWsw]/.test(x[4]) ? -1 : 1); return [f(g[0]), f(g[1])]; }
+  throw new Error('Formato no reconocido. Usá "40.4168, -3.7038" o "40°25′1″N 3°42′14″W".');
+}
+const dms = (d,p,n) => { const h = d >= 0 ? p : n; d = Math.abs(d); const g = Math.floor(d), mm = Math.floor((d-g)*60), ss = ((d-g)*60-mm)*60; return g + '°' + mm + '′' + ss.toFixed(2) + '″' + h; };
+const mapLink = (la,lo) => ({ l:'Ver en OpenStreetMap', u:'https://www.openstreetmap.org/?mlat=' + la + '&mlon=' + lo + '#map=15/' + la + '/' + lo });
+
+add('geo','Conversor de coordenadas','Convierte coordenadas entre grados decimales y grados/minutos/segundos.',
+  [tx('i','Coordenadas','40.4168, -3.7038  o  40°25′1″N 3°42′14″W')],
+  v => { const [a,b] = parseCoord(v.i); return { t:'Decimal   ' + a.toFixed(6) + ', ' + b.toFixed(6) + '\nDMS       ' + dms(a,'N','S') + ' ' + dms(b,'E','W') + '\nGoogle    ' + a.toFixed(6) + ',' + b.toFixed(6), links:[mapLink(a,b)] }; });
+
+add('geo','Distancia entre dos puntos','Calcula distancia (fórmula de Haversine) y rumbo entre dos coordenadas.',
+  [tx('a','Punto A','40.4168, -3.7038'), tx('b','Punto B','48.8566, 2.3522')],
+  v => { const [la1,lo1] = parseCoord(v.a), [la2,lo2] = parseCoord(v.b), R = 6371.0088, r = x => x*Math.PI/180, dl = r(la2-la1), dn = r(lo2-lo1); const h = Math.sin(dl/2)**2 + Math.cos(r(la1))*Math.cos(r(la2))*Math.sin(dn/2)**2, km = 2*R*Math.asin(Math.sqrt(h)); const y = Math.sin(dn)*Math.cos(r(la2)), x = Math.cos(r(la1))*Math.sin(r(la2)) - Math.sin(r(la1))*Math.cos(r(la2))*Math.cos(dn), br = (Math.atan2(y,x)*180/Math.PI+360)%360; return 'Distancia  ' + km.toFixed(2) + ' km  (' + (km*0.621371).toFixed(2) + ' millas)\nRumbo      ' + br.toFixed(1) + '° desde A hacia B'; });
+
+add('geo','Buscar lugar (geocodificación)','Convierte una dirección o nombre de lugar en coordenadas usando OpenStreetMap Nominatim.',
+  [tx('q','Lugar o dirección','Obelisco, Buenos Aires')],
+  async v => { if (!v.q.trim()) throw new Error('Escribí un lugar.'); const j = await net('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + encodeURIComponent(v.q)); if (!j.length) return 'Sin resultados.'; return { t:j.map((r,i) => (i+1) + '. ' + r.display_name + '\n   ' + r.lat + ', ' + r.lon + '  [' + r.type + ']').join('\n\n'), links:[mapLink(j[0].lat, j[0].lon)] }; }, true);
+
+add('geo','Geocodificación inversa','Convierte coordenadas en una dirección aproximada (OpenStreetMap Nominatim).',
+  [tx('i','Coordenadas','-34.6037, -58.3816')],
+  async v => { const [a,b] = parseCoord(v.i), j = await net('https://nominatim.openstreetmap.org/reverse?format=json&lat=' + a + '&lon=' + b); if (j.error) return 'Sin resultado para esas coordenadas.'; const ad = j.address || {}; return { t:j.display_name + '\n\n' + Object.entries(ad).map(([k,x]) => '  ' + pad(k,16) + x).join('\n'), links:[mapLink(a,b)] }; }, true);
+
+const TZS = ['UTC','America/Argentina/Buenos_Aires','America/Mexico_City','America/Bogota','America/Lima','America/Santiago','America/Caracas','America/New_York','America/Chicago','America/Denver','America/Los_Angeles','America/Sao_Paulo','Europe/London','Europe/Madrid','Europe/Berlin','Europe/Moscow','Africa/Cairo','Africa/Johannesburg','Asia/Dubai','Asia/Kolkata','Asia/Bangkok','Asia/Shanghai','Asia/Tokyo','Australia/Sydney','Pacific/Auckland'];
+add('geo','Husos horarios','Muestra un mismo instante en 25 zonas horarias. Útil para armar líneas de tiempo de investigación.',
+  [tx('i','Fecha/hora ISO con zona (vacío = ahora)','2026-09-21T14:30:00Z')],
+  v => { const d = v.i.trim() ? new Date(v.i.trim()) : new Date(); if (isNaN(d)) throw new Error('Fecha no válida. Usá formato ISO, ej: 2026-09-21T14:30:00Z'); return TZS.map(z => pad(z,34) + new Intl.DateTimeFormat('es',{ timeZone:z, dateStyle:'medium', timeStyle:'medium', timeZoneName:'short' }).format(d)).join('\n'); });
+
+function exifRead(u8){
+  if (u8[0] !== 0xFF || u8[1] !== 0xD8) throw new Error('No es un JPEG. (PNG y WebP casi nunca traen EXIF).');
+  let p = 2; while (p < u8.length - 4){ if (u8[p] !== 0xFF) break; const mk = u8[p+1], len = (u8[p+2] << 8) | u8[p+3]; if (mk === 0xE1 && u8[p+4] === 0x45 && u8[p+5] === 0x78 && u8[p+6] === 0x69 && u8[p+7] === 0x66) return tiff(u8, p+10); p += 2 + len; }
+  return null;
+}
+function tiff(u8,o){
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength), le = dv.getUint16(o) === 0x4949, g16 = x => dv.getUint16(x,le), g32 = x => dv.getUint32(x,le), TS = {1:1,2:1,3:2,4:4,5:8,7:1,9:4,10:8};
+  const ifd = off => { const r = {}, n = g16(o+off); for (let i=0;i<n;i++){ const e = o+off+2+i*12, tag = g16(e), ty = g16(e+2), c = g32(e+4), sz = (TS[ty]||1)*c, vo = sz > 4 ? o+g32(e+8) : e+8; let val;
+    if (ty === 2){ val=''; for (let k=0;k<c-1;k++) val += String.fromCharCode(u8[vo+k]); }
+    else if (ty === 3){ val=[]; for (let k=0;k<c;k++) val.push(g16(vo+k*2)); if (c===1) val=val[0]; }
+    else if (ty === 4){ val=[]; for (let k=0;k<c;k++) val.push(g32(vo+k*4)); if (c===1) val=val[0]; }
+    else if (ty === 5){ val=[]; for (let k=0;k<c;k++){ const a = g32(vo+k*8), b = g32(vo+k*8+4); val.push(b ? a/b : 0); } if (c===1) val=val[0]; }
+    r[tag] = val; } return r; };
+  const i0 = ifd(g32(o+4)), r = { i0 }; if (i0[0x8769] !== undefined) r.ex = ifd(i0[0x8769]); if (i0[0x8825] !== undefined) r.gps = ifd(i0[0x8825]); return r;
+}
+add('geo','Metadatos EXIF de una foto','Lee cámara, fecha, software y coordenadas GPS embebidas en una foto JPEG. Se procesa en tu dispositivo.',
+  [fi('f','Foto JPEG')],
+  async v => {
+    const u = await readFile(v.f); let r; try { r = exifRead(u); } catch (e){ if (e instanceof RangeError) throw new Error('El bloque EXIF está dañado o truncado.'); throw e; }
+    if (!r) return 'La imagen no contiene metadatos EXIF (fueron eliminados o nunca existieron).';
+    const i0 = r.i0, ex = r.ex || {}, g = r.gps; let o = 'Cámara      ' + ((i0[0x10f]||'') + ' ' + (i0[0x110]||'')).trim() + '\nSoftware    ' + (i0[0x131] || '—') + '\nFecha       ' + (i0[0x132] || '—') + '\nFecha toma  ' + (ex[0x9003] || '—') + '\nLente       ' + (ex[0xa434] || '—') + '\nISO         ' + (ex[0x8827] || '—') + '\nApertura    ' + (ex[0x829d] ? 'f/' + ex[0x829d].toFixed(1) : '—') + '\nFocal       ' + (ex[0x920a] ? ex[0x920a].toFixed(1) + ' mm' : '—');
+    const links = [];
+    if (g && g[2] && g[4]){ const cv = a => a[0] + a[1]/60 + a[2]/3600, la = cv(g[2]) * (g[1] === 'S' ? -1 : 1), lo = cv(g[4]) * (g[3] === 'W' ? -1 : 1); o += '\n\n⚠ GPS INCRUSTADO\nLatitud     ' + la.toFixed(6) + '\nLongitud    ' + lo.toFixed(6) + '\nAltitud     ' + (g[6] !== undefined ? g[6].toFixed(1) + ' m' : '—') + '\n\nEsta foto revela dónde se tomó. Quitá el EXIF antes de publicarla.'; links.push(mapLink(la,lo)); } else o += '\n\nGPS         sin coordenadas';
+    return { t:o, links };
+  });
+
+/* ============================================================
+   9) VULNERABILIDADES Y CVE
+   ============================================================ */
+const cveId = s => { const id = s.trim().toUpperCase(); if (!/^CVE-\d{4}-\d{4,}$/.test(id)) throw new Error('Formato esperado: CVE-2021-44228'); return id; };
+add('vuln','Consulta CVE (NVD)','Detalle oficial de una vulnerabilidad: descripción, severidad CVSS, debilidad y referencias.',
+  [tx('i','ID de CVE','CVE-2021-44228')],
+  async v => {
+    const id = cveId(v.i), j = await net('https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=' + id, { timeout:20000 }), c = j.vulnerabilities && j.vulnerabilities[0] && j.vulnerabilities[0].cve; if (!c) return 'No se encontró ' + id + ' en la NVD.';
+    const d = (c.descriptions || []).find(x => x.lang === 'en') || {}, m = c.metrics || {}, s = (m.cvssMetricV31 || m.cvssMetricV40 || m.cvssMetricV30 || [])[0], cd = s && s.cvssData;
+    return id + '\n\nPublicada   ' + c.published + '\nModificada  ' + c.lastModified + '\nEstado      ' + c.vulnStatus + '\n\nSeveridad   ' + (cd ? cd.baseScore + ' ' + cd.baseSeverity + '\nVector      ' + cd.vectorString : 'sin puntaje CVSS aún') + '\nDebilidad   ' + (((c.weaknesses || []).flatMap(w => w.description.map(x => x.value))).join(', ') || '—') + '\n\nDESCRIPCIÓN\n' + (d.value || '—') + '\n\nREFERENCIAS\n' + (c.references || []).slice(0,8).map(r => ' - ' + r.url).join('\n');
+  }, true);
+
+add('vuln','Buscar CVE por producto','Lista vulnerabilidades de la NVD que mencionan una palabra clave (producto, librería, fabricante).',
+  [tx('q','Palabra clave','apache log4j')],
+  async v => { if (!v.q.trim()) throw new Error('Escribí una palabra clave.'); const j = await net('https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=12&keywordSearch=' + encodeURIComponent(v.q.trim()), { timeout:25000 }); const r = (j.vulnerabilities || []).map(x => x.cve); return (j.totalResults || 0).toLocaleString('es') + ' resultado(s). Primeros ' + r.length + ':\n\n' + r.map(c => { const m = c.metrics || {}, s = (m.cvssMetricV31 || m.cvssMetricV40 || m.cvssMetricV30 || [])[0], d = ((c.descriptions || []).find(x => x.lang === 'en') || {}).value || ''; return c.id + '  ' + (s ? s.cvssData.baseScore + ' ' + s.cvssData.baseSeverity : 'sin CVSS') + '\n   ' + d.slice(0,160) + (d.length > 160 ? '…' : ''); }).join('\n\n'); }, true);
+
+add('vuln','Vulnerabilidades por paquete (OSV)','Consulta OSV.dev: qué vulnerabilidades afectan a una versión de una librería.',
+  [se('e','Ecosistema',['PyPI','npm','Maven','Go','crates.io','RubyGems','NuGet','Packagist']), tx('n','Paquete','lodash'), tx('v','Versión (opcional)','4.17.15')],
+  async v => { if (!v.n.trim()) throw new Error('Indicá el nombre del paquete.'); const b = { package:{ name:v.n.trim(), ecosystem:v.e } }; if (v.v.trim()) b.version = v.v.trim(); const j = await net('https://api.osv.dev/v1/query', { method:'POST', headers:{ 'content-type':'application/json' }, body:JSON.stringify(b) }); const r = j.vulns || []; return r.length ? r.length + ' vulnerabilidad(es):\n\n' + r.slice(0,25).map(x => x.id + (x.aliases ? '  (' + x.aliases.slice(0,3).join(', ') + ')' : '') + '\n   ' + (x.summary || '—')).join('\n\n') : '✔ OSV no registra vulnerabilidades para ese paquete/versión.'; }, true);
+
+add('vuln','Probabilidad de explotación (EPSS)','Puntaje EPSS: probabilidad de que un CVE sea explotado en los próximos 30 días.',
+  [tx('i','ID de CVE','CVE-2021-44228')],
+  async v => { const id = cveId(v.i), j = await net('https://api.first.org/data/v1/epss?cve=' + id), d = (j.data || [])[0]; if (!d) return 'EPSS no tiene datos para ' + id + '.'; return id + '\nEPSS        ' + (d.epss*100).toFixed(2) + '% de probabilidad de explotación (30 días)\nPercentil   ' + (d.percentile*100).toFixed(1) + ' (más alto = más riesgoso que otros CVE)\nFecha       ' + d.date; }, true);
+
+add('vuln','Catálogo KEV (CISA)','Busca en el catálogo de vulnerabilidades explotadas activamente, por CVE, fabricante o producto.',
+  [tx('q','CVE, fabricante o producto','ej: Microsoft Exchange')],
+  async v => { const q = v.q.trim().toLowerCase(); if (!q) throw new Error('Escribí un término.'); const j = await net('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', { timeout:30000 }); const r = j.vulnerabilities.filter(x => (x.cveID + ' ' + x.vendorProject + ' ' + x.product + ' ' + x.vulnerabilityName).toLowerCase().includes(q)); return 'Catálogo: ' + j.count + ' vulnerabilidades explotadas. Coincidencias: ' + r.length + '\n\n' + r.slice(0,15).map(x => x.cveID + '  ' + x.vendorProject + ' ' + x.product + '\n   ' + x.vulnerabilityName + '\n   Agregada ' + x.dateAdded + ' · Plazo ' + x.dueDate + ' · Ransomware: ' + x.knownRansomwareCampaignUse).join('\n\n'); }, true);
+
+const ru = x => { const i = Math.round(x*100000); return i % 10000 === 0 ? i/100000 : (Math.floor(i/10000)+1)/10; };
+const OPT = a => a.map(x => x[0]);
+const CV = { AV:[['Red (N)',.85],['Red adyacente (A)',.62],['Local (L)',.55],['Físico (P)',.2]], AC:[['Baja (L)',.77],['Alta (H)',.44]], PR:[['Ninguno (N)'],['Bajos (L)'],['Altos (H)']], UI:[['Ninguna (N)',.85],['Requerida (R)',.62]], S:[['Sin cambio (U)'],['Cambia (C)']], CIA:[['Alto (H)',.56],['Bajo (L)',.22],['Ninguno (N)',0]] };
+add('vuln','Calculadora CVSS v3.1','Calcula el puntaje base CVSS 3.1 a partir de las métricas de una vulnerabilidad.',
+  [se('av','Vector de ataque',OPT(CV.AV)), se('ac','Complejidad',OPT(CV.AC)), se('pr','Privilegios requeridos',OPT(CV.PR)), se('ui','Interacción del usuario',OPT(CV.UI)), se('s','Alcance',OPT(CV.S)), se('c','Confidencialidad',OPT(CV.CIA)), se('i','Integridad',OPT(CV.CIA)), se('a','Disponibilidad',OPT(CV.CIA))],
+  v => {
+    const L = s => s.match(/\((\w)\)/)[1], W = (k,val) => CV[k].find(x => x[0] === val)[1], ch = L(v.s) === 'C';
+    const pr = { N:.85, L: ch ? .68 : .62, H: ch ? .5 : .27 }[L(v.pr)], iss = 1 - (1-W('CIA',v.c))*(1-W('CIA',v.i))*(1-W('CIA',v.a));
+    const imp = ch ? 7.52*(iss-.029) - 3.25*Math.pow(iss-.02,15) : 6.42*iss, ex = 8.22*W('AV',v.av)*W('AC',v.ac)*pr*W('UI',v.ui);
+    const sc = imp <= 0 ? 0 : ru(Math.min(ch ? 1.08*(imp+ex) : imp+ex, 10)), sev = sc === 0 ? 'Ninguna' : sc < 4 ? 'Baja' : sc < 7 ? 'Media' : sc < 9 ? 'Alta' : 'Crítica';
+    return 'Puntaje base: ' + sc.toFixed(1) + '  (' + sev + ')\nVector: CVSS:3.1/AV:' + L(v.av) + '/AC:' + L(v.ac) + '/PR:' + L(v.pr) + '/UI:' + L(v.ui) + '/S:' + L(v.s) + '/C:' + L(v.c) + '/I:' + L(v.i) + '/A:' + L(v.a) + '\n\nExplotabilidad ' + ex.toFixed(1) + ' · Impacto ' + Math.max(imp,0).toFixed(1);
+  });
+
+add('vuln','OWASP Top 10 (2021)','Las diez categorías de riesgo más críticas en aplicaciones web.',[],
+  () => 'A01 Control de acceso roto — usuarios que actúan fuera de sus permisos.\nA02 Fallos criptográficos — datos sensibles sin proteger o cifrado débil.\nA03 Inyección — SQL, comandos, XSS por datos no validados.\nA04 Diseño inseguro — fallas de arquitectura, no de código.\nA05 Configuración de seguridad incorrecta — valores por defecto, servicios abiertos.\nA06 Componentes vulnerables y desactualizados — librerías con CVE conocidos.\nA07 Fallos de identificación y autenticación — contraseñas débiles, sesiones mal gestionadas.\nA08 Fallos de integridad de software y datos — actualizaciones y pipelines sin verificar.\nA09 Fallos de registro y monitoreo — ataques que nadie detecta.\nA10 Falsificación de solicitudes del servidor (SSRF) — el servidor consulta destinos elegidos por el atacante.');
+
+add('vuln','Debilidades CWE frecuentes','Las debilidades de software más comunes según MITRE, con su código.',[],
+  () => 'CWE-79   XSS — inyección de scripts en páginas web.\nCWE-89   Inyección SQL.\nCWE-78   Inyección de comandos del sistema operativo.\nCWE-22   Path traversal — acceso a archivos fuera del directorio permitido.\nCWE-352  CSRF — solicitudes falsificadas entre sitios.\nCWE-434  Subida de archivos peligrosos sin restricción.\nCWE-287  Autenticación incorrecta.\nCWE-306  Falta de autenticación en función crítica.\nCWE-862  Falta de autorización.\nCWE-798  Credenciales incrustadas en el código.\nCWE-502  Deserialización de datos no confiables.\nCWE-918  SSRF — falsificación de solicitudes del servidor.\nCWE-611  XXE — entidades externas XML.\nCWE-119  Desbordamiento de memoria (buffer overflow).\nCWE-416  Uso después de liberar memoria.\nCWE-787  Escritura fuera de límites.\nCWE-20   Validación de entrada incorrecta.\nCWE-200  Exposición de información sensible.\nCWE-327  Algoritmo criptográfico roto o riesgoso.\nCWE-601  Redirección abierta a sitios externos.');
+
+add('vuln','Tácticas MITRE ATT&CK','Las 14 fases que un atacante recorre, según el marco ATT&CK de MITRE.',[],
+  () => 'TA0043 Reconocimiento — recopilar información del objetivo.\nTA0042 Desarrollo de recursos — preparar infraestructura y herramientas.\nTA0001 Acceso inicial — la primera entrada a la red.\nTA0002 Ejecución — correr código en el sistema.\nTA0003 Persistencia — mantener el acceso tras reinicios.\nTA0004 Escalada de privilegios — obtener permisos superiores.\nTA0005 Evasión de defensas — evitar ser detectado.\nTA0006 Acceso a credenciales — robar cuentas y contraseñas.\nTA0007 Descubrimiento — explorar el entorno interno.\nTA0008 Movimiento lateral — saltar entre equipos.\nTA0009 Recolección — reunir los datos de interés.\nTA0011 Comando y control — comunicarse con los sistemas comprometidos.\nTA0010 Exfiltración — sacar los datos de la red.\nTA0040 Impacto — sabotear, cifrar o destruir.');
+
+add('vuln','Comandos Nmap (referencia)','Guía rápida de opciones de Nmap para auditar TUS propios equipos o redes autorizadas.',[],
+  () => 'nmap 192.168.1.10                 Escaneo de los 1000 puertos más comunes\nnmap -p- 192.168.1.10             Todos los puertos (1-65535)\nnmap -p 22,80,443 host            Puertos específicos\nnmap -sV host                     Detecta versiones de servicios\nnmap -O host                      Intenta identificar el sistema operativo\nnmap -sn 192.168.1.0/24           Descubre equipos activos sin escanear puertos\nnmap -A host                      Detección agresiva (versión, SO, scripts, traza)\nnmap -sU host                     Escaneo UDP\nnmap -T4 host                     Plantilla de velocidad (0 lento … 5 rápido)\nnmap --script vuln host           Scripts de detección de vulnerabilidades\nnmap -oN salida.txt host          Guarda el resultado en texto\n\nUsalo solo contra sistemas propios o con permiso por escrito.');
+
+/* ============================================================
+   10) FORENSE Y MALWARE
+   ============================================================ */
+const MAGIC = [['89504E470D0A1A0A','PNG (imagen)'],['FFD8FF','JPEG (imagen)'],['47494638','GIF (imagen)'],['25504446','PDF'],['504B0304','ZIP / DOCX / XLSX / PPTX / APK / JAR'],['526172211A07','RAR'],['377ABCAF271C','7-Zip'],['7F454C46','ELF (ejecutable Linux)'],['4D5A','EXE / DLL de Windows (PE)'],['CAFEBABE','Java class / Mach-O universal'],['CFFAEDFE','Mach-O 64 bits (macOS)'],['1F8B08','GZIP'],['425A68','BZIP2'],['FD377A585A00','XZ'],['53514C69746520666F726D6174203300','SQLite'],['7B5C72746631','RTF'],['D0CF11E0A1B11AE1','OLE2 (DOC/XLS/PPT antiguos, MSI)'],['D4C3B2A1','PCAP (captura de red)'],['0A0D0D0A','PCAPNG (captura de red)'],['494433','MP3 (con ID3)'],['00000018667479','MP4 / MOV'],['52494646','RIFF (WAV/AVI/WebP)'],['4F676753','OGG'],['1A45DFA3','Matroska / WebM'],['3C3F786D6C','XML'],['23212F','Script con shebang (#!/)'],['EDABEEDB','RPM'],['213C617263683E','Paquete .deb / archivo ar'],['4C000000','Acceso directo de Windows (LNK)']];
+add('for','Identificador de tipo de archivo','Descubre el tipo real de un archivo por sus primeros bytes (firma), sin fiarse de la extensión.',
+  [fi('f','Archivo')],
+  async v => { const u = await readFile(v.f), h = hex(u.slice(0,16)).toUpperCase(), m = MAGIC.find(([s]) => h.startsWith(s)), ext = (v.f.name.split('.').pop() || '').toLowerCase(); return 'Archivo     ' + v.f.name + '\nTamaño      ' + u.length + ' bytes\nPrimeros bytes  ' + h.match(/../g).join(' ') + '\n\nTipo real   ' + (m ? m[1] : 'No reconocido en la tabla local') + (m && /EXE|ELF|Mach/.test(m[1]) && !/exe|dll|so|bin|out|app/.test(ext) ? '\n\n⚠ Es un ejecutable con una extensión que no lo aparenta (.' + ext + ').' : ''); });
+
+add('for','Visor hexadecimal','Muestra los bytes de un archivo en formato hex + ASCII, como un editor hexadecimal.',
+  [fi('f','Archivo'), nu('o','Desplazamiento (byte inicial)',0), nu('n','Cantidad de bytes',512)],
+  async v => { const u = await readFile(v.f), o = Math.max(0, v.o|0), n = Math.min(4096, Math.max(16, v.n|0)); let out = ''; for (let i=o;i<Math.min(u.length,o+n);i+=16){ const r = u.slice(i, i+16); out += i.toString(16).padStart(8,'0') + '  ' + Array.from(r, b => b.toString(16).padStart(2,'0')).join(' ').padEnd(47) + '  ' + Array.from(r, b => b >= 32 && b < 127 ? String.fromCharCode(b) : '.').join('') + '\n'; } return out || 'El desplazamiento excede el tamaño del archivo.'; });
+
+add('for','Extractor de strings','Extrae cadenas de texto legibles de un archivo binario (URLs, rutas, mensajes), como el comando strings.',
+  [fi('f','Archivo'), nu('m','Longitud mínima',6)],
+  async v => { const u = await readFile(v.f), min = Math.max(3, v.m|0), out = []; let cur = ''; for (let i=0;i<u.length && out.length < 800;i++){ const b = u[i]; if (b >= 32 && b < 127) cur += String.fromCharCode(b); else { if (cur.length >= min) out.push(cur); cur = ''; } } if (cur.length >= min) out.push(cur); return out.length + ' cadena(s)' + (out.length >= 800 ? ' (límite de 800)' : '') + ':\n\n' + out.join('\n'); });
+
+const entropy = u => { const c = new Array(256).fill(0); u.forEach(b => c[b]++); return c.reduce((s,x) => x ? s - (x/u.length)*Math.log2(x/u.length) : s, 0); };
+add('for','Entropía de Shannon','Mide el desorden de un archivo o texto (0–8 bits/byte). Valores altos sugieren cifrado o compresión (típico de malware empaquetado).',
+  [fi('f','Archivo (opcional)'), ta('i','…o texto')],
+  async v => { const u = v.f ? await readFile(v.f) : enc.encode(v.i); if (!u.length) throw new Error('Elegí un archivo o escribí texto.'); const e = entropy(u); return 'Bytes    ' + u.length + '\nEntropía ' + e.toFixed(4) + ' bits/byte (máx. 8)\n\n' + (e > 7.5 ? '⚠ Muy alta: probablemente cifrado, comprimido o empaquetado.' : e > 6.5 ? 'Alta: datos comprimidos o binarios densos.' : e > 4 ? 'Media: texto o código típico.' : 'Baja: datos muy repetitivos.'); });
+
+const refang = s => s.replace(/hxxp/gi,'http').replace(/\[\.\]|\(\.\)|\{\.\}/g,'.').replace(/\[:\]/g,':').replace(/\[@\]|\[at\]/gi,'@').replace(/\[\/\]/g,'/');
+add('for','Extractor de IOCs','Extrae indicadores de compromiso de un texto: IPs, dominios, URLs, correos, hashes y CVE.',
+  [ta('i','Texto (reporte, log, correo…)')],
+  v => {
+    const s = refang(v.i), F = re => uniq(s.match(re) || []);
+    const urls = F(/https?:\/\/[^\s"'<>)\]]+/gi), ips = F(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g).filter(x => ip4(x) !== null), mails = F(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g), cves = F(/CVE-\d{4}-\d{4,}/gi), m5 = F(/\b[a-f0-9]{32}\b/gi), s1 = F(/\b[a-f0-9]{40}\b/gi), s256 = F(/\b[a-f0-9]{64}\b/gi);
+    const doms = uniq((s.match(/\b(?:[a-z0-9-]+\.)+[a-z]{2,}\b/gi) || []).map(x => x.toLowerCase())).filter(x => !mails.some(m => m.toLowerCase().endsWith(x)) && !/^\d+(\.\d+)+$/.test(x) && !/\.(png|jpg|gif|js|css|html|exe|dll|txt|pdf|zip)$/.test(x));
+    const blk = (t,a) => t + ' (' + a.length + ')\n' + (a.length ? a.map(x => '  ' + x).join('\n') : '  —') + '\n\n';
+    return blk('IPv4',ips) + blk('Dominios',doms) + blk('URLs',urls) + blk('Correos',mails) + blk('MD5',m5) + blk('SHA-1',s1) + blk('SHA-256',s256) + blk('CVE',cves).trim();
+  });
+
+add('for','Defang / Refang','Neutraliza URLs e IPs peligrosas para compartirlas sin riesgo de clic (hxxp, [.]) o las restaura.',
+  [se('m','Modo',['Neutralizar (defang)','Restaurar (refang)']), ta('i','Texto')],
+  v => v.m.startsWith('Neut') ? v.i.replace(/https?:\/\//gi, m => m.replace(/^http/i,'hxxp')).replace(/\./g,'[.]').replace(/@/g,'[@]') : refang(v.i));
+
+add('for','Convertidor de timestamps','Convierte marcas de tiempo entre Unix, Windows FILETIME, Chrome/WebKit, macOS y fechas legibles.',
+  [tx('i','Valor numérico o fecha ISO','1758463800  |  133800000000000000  |  2026-09-21T14:30:00Z')],
+  v => {
+    const s = v.i.trim(); if (!s) throw new Error('Ingresá un valor.'); const F = ms => isFinite(ms) && Math.abs(ms) < 8.64e15 ? new Date(ms).toISOString() : '(fuera de rango)';
+    if (/^-?\d+(\.\d+)?$/.test(s)){ const n = Number(s); return 'Interpretaciones de ' + s + '\n\nUnix (segundos)          ' + F(n*1000) + '\nUnix (milisegundos)       ' + F(n) + '\nUnix (microsegundos)      ' + F(n/1000) + '\nWindows FILETIME (100 ns) ' + F(n/10000 - 11644473600000) + '\nChrome/WebKit (µs 1601)   ' + F(n/1000 - 11644473600000) + '\nmacOS/Cocoa (s desde 2001)' + F(n*1000 + 978307200000).padStart(26) + '\n\nElegí la que dé una fecha razonable para tu caso.'; }
+    const d = new Date(s); if (isNaN(d)) throw new Error('Formato no reconocido.'); const ms = d.getTime();
+    return 'ISO             ' + d.toISOString() + '\nUnix (s)        ' + Math.floor(ms/1000) + '\nUnix (ms)       ' + ms + '\nWindows FILETIME ' + (BigInt(ms + 11644473600000) * 10000n) + '\nChrome/WebKit   ' + (BigInt(ms + 11644473600000) * 1000n) + '\nmacOS/Cocoa     ' + Math.floor((ms - 978307200000)/1000);
+  });
+
+add('for','Caracteres invisibles y homógrafos','Detecta caracteres de ancho cero, marcas bidireccionales y letras cirílicas/griegas que imitan a las latinas.',
+  [ta('i','Texto a inspeccionar')],
+  v => {
+    const inv = { 0x200B:'Espacio de ancho cero', 0x200C:'Unidor de ancho cero (ZWNJ)', 0x200D:'Unidor de ancho cero (ZWJ)', 0x200E:'Marca izquierda-a-derecha', 0x200F:'Marca derecha-a-izquierda', 0x202A:'Incrustación LTR', 0x202B:'Incrustación RTL', 0x202C:'Fin de formato direccional', 0x202D:'Anulación LTR', 0x202E:'Anulación RTL (truco de spoofing)', 0x2060:'Unidor de palabras', 0x2066:'Aislamiento LTR', 0x2067:'Aislamiento RTL', 0x2069:'Fin de aislamiento', 0xFEFF:'BOM / espacio de ancho cero', 0x00AD:'Guion blando', 0x00A0:'Espacio duro (NBSP)', 0x3164:'Relleno Hangul (parece vacío)' };
+    const out = []; let i = 0; for (const ch of v.i){ const cp = ch.codePointAt(0); if (inv[cp]) out.push('Pos ' + i + '  U+' + cp.toString(16).toUpperCase().padStart(4,'0') + '  ' + inv[cp]); else if ((cp >= 0x400 && cp <= 0x4FF) || (cp >= 0x370 && cp <= 0x3FF)){ if (/[A-Za-z]/.test(v.i)) out.push('Pos ' + i + '  U+' + cp.toString(16).toUpperCase().padStart(4,'0') + '  "' + ch + '" letra ' + (cp < 0x400 ? 'griega' : 'cirílica') + ' mezclada con latinas (posible homógrafo)'); } i++; }
+    return out.length ? '⚠ ' + out.length + ' hallazgo(s):\n\n' + out.slice(0,200).join('\n') : '✔ No se detectaron caracteres invisibles ni homógrafos.';
+  });
+
+add('for','Probador de expresiones regulares','Prueba una regex sobre un texto y muestra coincidencias, posiciones y grupos.',
+  [tx('r','Expresión','\\b\\d{3}-\\d{4}\\b'), tx('f','Banderas','g, i, m…','g'), ta('i','Texto de prueba')],
+  v => { let re; try { re = new RegExp(v.r, v.f.includes('g') ? v.f : v.f + 'g'); } catch (e){ throw new Error('Regex inválida: ' + e.message); } const m = [...v.i.matchAll(re)].slice(0,300); return m.length ? m.length + ' coincidencia(s):\n\n' + m.map((x,i) => (i+1) + '. "' + x[0] + '"  @' + x.index + (x.length > 1 ? '  grupos: ' + JSON.stringify(x.slice(1)) : '')).join('\n') : 'Sin coincidencias.'; });
+
+add('for','Formateador y validador JSON','Valida, embellece o minimiza JSON y señala dónde está el error.',
+  [se('m','Modo',['Embellecer','Minimizar']), ta('i','JSON')],
+  v => { let j; try { j = JSON.parse(v.i); } catch (e){ throw new Error('JSON inválido: ' + e.message); } return v.m === 'Embellecer' ? JSON.stringify(j,null,2) : JSON.stringify(j); });
+
+/* ============================================================
+   11) OSINT DE CUENTAS Y PERSONAS
+   ============================================================ */
+add('osint','Generador de Google dorks','Arma consultas avanzadas de búsqueda para auditar qué información tuya o de tu organización quedó expuesta.',
+  [tx('d','Dominio a auditar','ejemplo.com'), se('t','Objetivo',['Documentos expuestos','Listados de directorios abiertos','Páginas de acceso (login)','Archivos de configuración y respaldos','Subdominios','Menciones en sitios de pegado','Errores y mensajes de depuración'])],
+  v => {
+    const d = dname(v.d), Q = { 'Documentos expuestos':['site:D filetype:pdf','site:D filetype:xlsx OR filetype:xls','site:D filetype:docx OR filetype:doc','site:D filetype:pptx OR filetype:ppt'], 'Listados de directorios abiertos':['site:D intitle:"index of"','site:D intitle:"index of" "parent directory"'], 'Páginas de acceso (login)':['site:D inurl:login','site:D inurl:admin','site:D intitle:"login" OR intitle:"sign in"'], 'Archivos de configuración y respaldos':['site:D ext:env OR ext:cfg OR ext:conf','site:D ext:bak OR ext:old OR ext:backup','site:D ext:sql OR ext:db'], 'Subdominios':['site:*.D -www','site:*.*.D'], 'Menciones en sitios de pegado':['"D" site:pastebin.com','"D" site:github.com','"D" site:gitlab.com'], 'Errores y mensajes de depuración':['site:D "sql syntax near"','site:D "Warning: mysqli"','site:D "stack trace"'] };
+    const qs = Q[v.t].map(q => q.replace(/\bD\b/g, d)); return { t:qs.join('\n'), links:qs.slice(0,4).map((q,i) => ({ l:'Buscar #' + (i+1) + ' en Google', u:'https://www.google.com/search?q=' + encodeURIComponent(q) })) };
+  });
+
+add('osint','Variantes de nombre de usuario','Genera combinaciones probables de usuario a partir de un nombre real, para buscar cuentas propias o autorizadas.',
+  [tx('n','Nombre','ej: Juan'), tx('a','Apellido','ej: Pérez')],
+  v => { const n = v.n.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,''), a = v.a.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,''); if (!n || !a) throw new Error('Completá nombre y apellido.'); const u = [n+a, n+'.'+a, n+'_'+a, n+'-'+a, a+n, a+'.'+n, n[0]+a, n[0]+'.'+a, n+a[0], a+n[0], n+a+'1', n+a+'01', n+a+'123', 'the'+n+a, n+a+'official', n+'.'+a+'.'+'ok']; return uniq(u).join('\n'); });
+
+add('osint','Permutador de correos','Genera direcciones de correo corporativo probables para un dominio (auditoría de exposición o contacto autorizado).',
+  [tx('n','Nombre'), tx('a','Apellido'), tx('d','Dominio','ejemplo.com')],
+  v => { const c = s => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,''), n = c(v.n), a = c(v.a), d = dname(v.d); if (!n || !a) throw new Error('Completá nombre y apellido.'); return uniq([n, a, n+a, n+'.'+a, a+'.'+n, n[0]+a, n[0]+'.'+a, n+a[0], a+n[0], n+'_'+a, n+'-'+a, a+n]).map(x => x + '@' + d).join('\n'); });
+
+add('osint','GitHub: perfil y actividad pública','Consulta la API pública de GitHub: datos del perfil, repositorios recientes y correos que aparecen en commits públicos.',
+  [tx('u','Usuario de GitHub')],
+  async v => {
+    const u = v.u.trim(); if (!/^[a-z0-9-]{1,39}$/i.test(u)) throw new Error('Usuario no válido.');
+    const p = await net('https://api.github.com/users/' + u); let o = 'Usuario     ' + p.login + '\nNombre      ' + (p.name || '—') + '\nEmpresa     ' + (p.company || '—') + '\nUbicación   ' + (p.location || '—') + '\nWeb         ' + (p.blog || '—') + '\nBio         ' + (p.bio || '—') + '\nCreada      ' + p.created_at + '\nRepos       ' + p.public_repos + '   Seguidores ' + p.followers + '   Siguiendo ' + p.following;
+    try { const r = await net('https://api.github.com/users/' + u + '/repos?per_page=8&sort=pushed'); o += '\n\nRepos recientes\n' + r.map(x => '  ' + pad(x.name,28) + (x.language || '—')).join('\n'); } catch (e){ /* opcional */ }
+    try { const ev = await net('https://api.github.com/users/' + u + '/events/public?per_page=60'), em = uniq(ev.flatMap(e => e.type === 'PushEvent' ? e.payload.commits.map(c => c.author.email) : [])); o += '\n\nCorreos vistos en commits públicos\n' + (em.length ? em.map(x => '  ' + x).join('\n') : '  —'); } catch (e){ /* opcional */ }
+    return { t:o, links:[{ l:'Abrir perfil', u:p.html_url }] };
+  }, true);
+
+add('osint','Gravatar por correo','Comprueba si un correo tiene avatar Gravatar asociado (el hash MD5 del correo es público).',
+  [tx('e','Correo','usuario@dominio.com')],
+  async v => { const e = v.e.trim().toLowerCase(); if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)) throw new Error('Correo no válido.'); const h = md5(enc.encode(e)), url = 'https://www.gravatar.com/avatar/' + h + '?s=200&d=404'; const ok = await new Promise(res => { const im = new Image(); im.onload = () => res(true); im.onerror = () => res(false); im.src = url; setTimeout(() => res(null), 8000); }); return { t:'Hash MD5: ' + h + '\n' + (ok === true ? '✔ Tiene Gravatar.' : ok === false ? 'Sin Gravatar asociado (o el servicio no es accesible desde este entorno).' : 'Tiempo agotado.'), img: ok ? url : null, links:[{ l:'Perfil Gravatar', u:'https://gravatar.com/' + h }] }; }, true);
+
+add('osint','Constructor de búsquedas OSINT','Dado un dominio, IP, usuario o correo, arma enlaces directos a los buscadores públicos más útiles.',
+  [se('t','Tipo de dato',['Dominio','Dirección IP','Nombre de usuario','Correo electrónico']), tx('q','Valor')],
+  v => {
+    const q = v.q.trim(); if (!q) throw new Error('Ingresá un valor.'); const e = encodeURIComponent(q);
+    const L = { 'Dominio':[['crt.sh','https://crt.sh/?q='+e],['urlscan.io','https://urlscan.io/search/#'+e],['VirusTotal','https://www.virustotal.com/gui/domain/'+e],['SecurityTrails','https://securitytrails.com/domain/'+e+'/dns'],['Wayback Machine','https://web.archive.org/web/*/'+e+'*'],['DNSDumpster','https://dnsdumpster.com/'],['Shodan','https://www.shodan.io/search?query=hostname%3A'+e]], 'Dirección IP':[['Shodan','https://www.shodan.io/host/'+e],['Censys','https://search.censys.io/hosts/'+e],['AbuseIPDB','https://www.abuseipdb.com/check/'+e],['GreyNoise','https://viz.greynoise.io/ip/'+e],['VirusTotal','https://www.virustotal.com/gui/ip-address/'+e],['AlienVault OTX','https://otx.alienvault.com/indicator/ip/'+e],['BGPView','https://bgpview.io/ip/'+e]], 'Nombre de usuario':[['GitHub','https://github.com/'+e],['Reddit','https://www.reddit.com/user/'+e],['X / Twitter','https://x.com/'+e],['Instagram','https://www.instagram.com/'+e],['TikTok','https://www.tiktok.com/@'+e],['Keybase','https://keybase.io/'+e],['Búsqueda web exacta','https://www.google.com/search?q=%22'+e+'%22']], 'Correo electrónico':[['Have I Been Pwned','https://haveibeenpwned.com/account/'+e],['EmailRep','https://emailrep.io/'+e],['Búsqueda web exacta','https://www.google.com/search?q=%22'+e+'%22'],['Gravatar (herramienta local en esta consola)','https://gravatar.com/']] }[v.t];
+    return { t:L.length + ' portales para «' + q + '». Abrí los que necesites:', links:L.map(x => ({ l:x[0], u:x[1] })) };
+  });
+
+/* ============================================================
+   12) PORTALES EXTERNOS
+   ============================================================ */
+const EXT = [
+ ['Shodan','https://www.shodan.io/','Motor de búsqueda de dispositivos y servicios expuestos (cámaras, servidores, IoT).'],
+ ['Censys','https://search.censys.io/','Escaneo continuo de internet: hosts, certificados y servicios activos.'],
+ ['ZoomEye','https://www.zoomeye.org/','Buscador de activos y componentes web expuestos.'],
+ ['FOFA','https://fofa.info/','Buscador de activos de red con filtros avanzados.'],
+ ['VirusTotal','https://www.virustotal.com/','Analiza archivos, URLs, dominios e IPs con decenas de motores antivirus.'],
+ ['Hybrid Analysis','https://www.hybrid-analysis.com/','Sandbox gratuito que ejecuta muestras sospechosas y reporta su comportamiento.'],
+ ['ANY.RUN','https://any.run/','Sandbox interactivo para analizar malware en tiempo real.'],
+ ['AlienVault OTX','https://otx.alienvault.com/','Plataforma abierta y colaborativa de inteligencia de amenazas.'],
+ ['AbuseIPDB','https://www.abuseipdb.com/','Base comunitaria de IPs reportadas por abuso.'],
+ ['GreyNoise','https://www.greynoise.io/','Separa el ruido de escaneos masivos del tráfico realmente dirigido.'],
+ ['Pulsedive','https://pulsedive.com/','Plataforma gratuita de investigación de indicadores y amenazas.'],
+ ['IBM X-Force Exchange','https://exchange.xforce.ibmcloud.com/','Intercambio de inteligencia sobre amenazas de IBM.'],
+ ['Cisco Talos Intelligence','https://talosintelligence.com/','Reputación de IPs, dominios y familias de malware.'],
+ ['ThreatFox','https://threatfox.abuse.ch/','Feed de indicadores de compromiso asociados a malware.'],
+ ['URLhaus','https://urlhaus.abuse.ch/','Rastrea URLs que distribuyen malware activamente.'],
+ ['MalwareBazaar','https://bazaar.abuse.ch/','Repositorio comunitario de muestras de malware.'],
+ ['Feodo Tracker','https://feodotracker.abuse.ch/','Servidores de comando y control de botnets bancarias.'],
+ ['PhishTank','https://phishtank.org/','Base colaborativa de URLs de phishing verificadas.'],
+ ['OpenPhish','https://openphish.com/','Feed en tiempo real de sitios de phishing activos.'],
+ ['Spamhaus','https://www.spamhaus.org/','Listas de bloqueo de spam y redes maliciosas.'],
+ ['urlscan.io','https://urlscan.io/','Escanea una URL y muestra sus peticiones, dominios y captura de pantalla.'],
+ ['SecurityTrails','https://securitytrails.com/','Historial de DNS, WHOIS y subdominios.'],
+ ['DNSDumpster','https://dnsdumpster.com/','Mapa visual de la infraestructura DNS de un dominio.'],
+ ['ViewDNS.info','https://viewdns.info/','Suite de utilidades DNS: reverse IP, historial, propagación.'],
+ ['MXToolbox','https://mxtoolbox.com/','Diagnóstico de correo, DNS y listas negras.'],
+ ['Netcraft','https://www.netcraft.com/','Datos de hosting, tecnología y reputación de sitios.'],
+ ['BuiltWith','https://builtwith.com/','Detecta el stack tecnológico de un sitio web.'],
+ ['Wappalyzer','https://www.wappalyzer.com/','Identifica CMS, frameworks y herramientas de un sitio.'],
+ ['SSL Labs','https://www.ssllabs.com/ssltest/','Califica la configuración TLS de un servidor.'],
+ ['SecurityHeaders','https://securityheaders.com/','Analiza las cabeceras de seguridad de cualquier sitio en vivo.'],
+ ['Mozilla Observatory','https://developer.mozilla.org/en-US/observatory','Evaluación integral de la seguridad de un sitio web.'],
+ ['Exploit-DB','https://www.exploit-db.com/','Archivo público de exploits y pruebas de concepto.'],
+ ['Google Hacking Database','https://www.exploit-db.com/google-hacking-database','Catálogo de dorks de búsqueda para hallar información expuesta.'],
+ ['Vulners','https://vulners.com/','Buscador de vulnerabilidades, exploits y boletines.'],
+ ['CVE Details','https://www.cvedetails.com/','Vulnerabilidades por producto con estadísticas.'],
+ ['Snyk Vulnerability DB','https://security.snyk.io/','Vulnerabilidades en librerías y dependencias.'],
+ ['GitHub Advisory Database','https://github.com/advisories','Avisos de seguridad de paquetes de código abierto.'],
+ ['Have I Been Pwned','https://haveibeenpwned.com/','Verifica si tu correo apareció en filtraciones (la API de brechas requiere clave).'],
+ ['LeakCheck','https://leakcheck.io/','Búsqueda de cuentas comprometidas en bases filtradas.'],
+ ['Hunter.io','https://hunter.io/','Encuentra correos corporativos asociados a un dominio.'],
+ ['Sherlock','https://github.com/sherlock-project/sherlock','Herramienta que busca un usuario en cientos de redes sociales.'],
+ ['Social Searcher','https://www.social-searcher.com/','Búsqueda de menciones públicas en redes sociales.'],
+ ['WhoisXML API','https://whoisxmlapi.com/','Datos WHOIS y DNS históricos vía API.'],
+ ['MaxMind GeoIP','https://www.maxmind.com/en/geoip-databases','Bases de geolocalización IP de alta precisión.'],
+ ['Team Cymru IP-ASN','https://www.team-cymru.com/ip-asn-mapping','Mapeo masivo de IPs a números de sistema autónomo.'],
+ ['Google Safe Browsing','https://transparencyreport.google.com/safe-browsing/search','Consulta si una URL está marcada como insegura.'],
+ ['Interpol Notices','https://www.interpol.int/en/How-we-work/Notices/View-Red-Notices','Notificaciones rojas públicas de personas buscadas a nivel internacional.']
+];
+EXT.forEach(([n,u,d]) => T.push({ cat:'ext', name:n, desc:d, url:u, fields:[], run:null, live:false }));
+/* ============================================================
+   13) FBI MOST WANTED
+   ============================================================ */
+const FBI_CATS = [
+  ['','Todos'], ['Ten Most Wanted','Los 10 más buscados'], ['Terrorism','Terrorismo'],
+  ['Kidnappings/Missing Persons','Secuestros y desaparecidos'], ['Seeking Information','Se busca información'],
+  ['Most Wanted Fraudsters','Fraude'], ['Crimes Against Children','Crímenes contra menores'],
+  ['Criminal Enterprise Investigations','Crimen organizado'], ['Bank Robbers','Robo de bancos'],
+  ['Violent Gangs','Pandillas violentas'], ['Additional Violent Crimes','Otros delitos violentos']
+];
+const fbiState = { page:1, cat:'', q:'', busy:false };
+
+function fbiCross(){ return '<svg class="xsvg ph" viewBox="0 0 40 64"><use href="#cross"/></svg>'; }
+
+async function fbiFetch(){
+  const p = new URLSearchParams({ page:fbiState.page, pageSize:20 });
+  if (fbiState.q.trim()) p.set('title', fbiState.q.trim());
+  const j = await net('https://api.fbi.gov/wanted/v1/list?' + p.toString(), { timeout:20000 });
+  return j;
+}
+
+function fbiCard(item){
+  const img = (item.images && item.images[0] && (item.images[0].thumb || item.images[0].large)) || '';
+  const reward = item.reward_text ? item.reward_text.replace(/<[^>]+>/g,'').trim() : '';
+  const warn = item.warning_message || '';
+  const place = [item.field_offices && item.field_offices.join(', '), item.status === 'captured' ? 'CAPTURADO' : ''].filter(Boolean).join(' · ');
+  return '<div class="fcard">' +
+    '<div class="fimg">' + (img ? '<img loading="lazy" src="' + img + '" alt="' + (item.title||'').replace(/"/g,'') + '">' : fbiCross()) + '</div>' +
+    '<div class="fbody">' +
+      '<div class="fname">' + (item.title || 'Sin nombre') + '</div>' +
+      '<div class="fdesc">' + (item.description ? item.description.replace(/\r?\n/g,' · ').slice(0,140) : (item.subjects||[]).join(', ')) + '</div>' +
+      (reward ? '<div class="freward">' + reward.slice(0,90) + '</div>' : '') +
+      (warn ? '<div class="fwarn">⚠ ' + warn + '</div>' : '') +
+      (place ? '<div class="fmeta">' + place + '</div>' : '') +
+    '</div>' +
+    '<a class="more" target="_blank" rel="noopener" href="' + (item.url || 'https://www.fbi.gov/wanted') + '">Ver ficha completa ↗</a>' +
+  '</div>';
+}
+
+async function renderFBI(){
+  const view = document.getElementById('view');
+  view.innerHTML =
+    '<h2 class="view-title">FBI Most Wanted</h2>' +
+    '<p class="view-desc">Base de datos pública del FBI (api.fbi.gov). Incluye personas buscadas, casos de información y fugitivos, con foto cuando está disponible. Los datos y las fotografías pertenecen al FBI; esta consola solo los consulta en vivo.</p>' +
+    '<div class="fbi-bar"><input id="fbi-q" type="text" placeholder="Buscar por nombre o caso…" value="' + fbiState.q.replace(/"/g,'') + '"><button id="fbi-go" type="button">Buscar</button></div>' +
+    '<div class="chips" id="fbi-chips">' + FBI_CATS.map(([id,label]) => '<button class="chip' + (fbiState.cat===id?' on':'') + '" data-c="' + id + '" type="button">' + label + '</button>').join('') + '</div>' +
+    '<div class="fgrid" id="fbi-grid"><div class="note">Cargando…</div></div>' +
+    '<div class="pager" id="fbi-pager"></div>' +
+    '<button class="back" id="back-home" type="button">← Volver al inicio</button>';
+
+  document.getElementById('back-home').addEventListener('click', renderHome);
+  document.getElementById('fbi-go').addEventListener('click', () => { fbiState.q = document.getElementById('fbi-q').value; fbiState.page = 1; loadFBI(); });
+  document.getElementById('fbi-q').addEventListener('keydown', e => { if (e.key === 'Enter'){ fbiState.q = e.target.value; fbiState.page = 1; loadFBI(); } });
+  document.getElementById('fbi-chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; fbiState.cat = b.dataset.c; fbiState.page = 1; loadFBI(); });
+  loadFBI();
+}
+
+async function loadFBI(){
+  if (fbiState.busy) return; fbiState.busy = true;
+  const grid = document.getElementById('fbi-grid'), pager = document.getElementById('fbi-pager');
+  document.querySelectorAll('#fbi-chips .chip').forEach(c => c.classList.toggle('on', c.dataset.c === fbiState.cat));
+  grid.innerHTML = '<div class="note">Cargando desde api.fbi.gov…</div>'; pager.innerHTML = '';
+  try {
+    const j = await fbiFetch();
+    let items = j.items || [];
+    if (fbiState.cat && fbiState.cat !== 'Ten Most Wanted') items = items.filter(x => (x.subjects || []).includes(fbiState.cat));
+    if (fbiState.cat === 'Ten Most Wanted') items = items.filter(x => x.poster_classification === 'ten-most-wanted' || (x.subjects||[]).includes('Ten Most Wanted'));
+    grid.innerHTML = items.length ? items.map(fbiCard).join('') : '<div class="note">Sin resultados para este filtro/página. Probá otra categoría o página.</div>';
+    const totalPages = Math.max(1, Math.ceil((j.total || items.length) / 20));
+    pager.innerHTML = '<button id="fp-prev" type="button" ' + (fbiState.page<=1?'disabled':'') + '>← Anterior</button>' +
+      '<span>página ' + fbiState.page + ' de ' + totalPages + ' · ' + (j.total||0).toLocaleString('es') + ' registros totales</span>' +
+      '<button id="fp-next" type="button" ' + (fbiState.page>=totalPages?'disabled':'') + '>Siguiente →</button>';
+    const pv = document.getElementById('fp-prev'), nx = document.getElementById('fp-next');
+    if (pv) pv.addEventListener('click', () => { fbiState.page--; loadFBI(); window.scrollTo({ top:0, behavior:'smooth' }); });
+    if (nx) nx.addEventListener('click', () => { fbiState.page++; loadFBI(); window.scrollTo({ top:0, behavior:'smooth' }); });
+  } catch (e){
+    grid.innerHTML = '<div class="note">✖ ' + (e.message || NET_MSG) + '</div>';
+  } finally { fbiState.busy = false; }
+}
+
+/* ============================================================
+   APP SHELL — inicio, categorías, herramientas, panel
+   ============================================================ */
+function catCount(id){ return T.filter(t => t.cat === id).length; }
+
+function renderHome(){
+  const view = document.getElementById('view');
+  const search = '<div class="search"><input id="q" type="text" placeholder="Buscar entre ' + T.length + ' herramientas… (ej: hash, dns, cve, contraseña)"></div>';
+  const cats = CATS.map(c => {
+    const cross = '<svg class="cx xsvg" viewBox="0 0 40 64"><use href="#cross"/></svg>';
+    return '<button class="cat' + (c.id==='fbi'?' fbi':'') + '" data-cat="' + c.id + '">' + cross +
+      '<div class="cn">' + c.name + '<span class="cc">' + catCount(c.id) + '</span></div>' +
+      '<div class="cd">' + c.desc + '</div></button>';
+  }).join('');
+  view.innerHTML = search + '<div class="home-title">Categorías</div><div class="grid" id="catgrid">' + cats + '</div><div id="results"></div>';
+  document.getElementById('catgrid').addEventListener('click', e => { const b = e.target.closest('.cat'); if (!b) return; b.dataset.cat === 'fbi' ? renderFBI() : renderCategory(b.dataset.cat); });
+  document.getElementById('q').addEventListener('input', e => renderSearch(e.target.value));
+  window.scrollTo({ top:0 });
+}
+
+function toolCard(t, idx){
+  if (t.cat === 'ext'){
+    return '<a class="tool" href="' + t.url + '" target="_blank" rel="noopener"><div class="tn">' + t.name + '<span class="badge">↗</span></div><div class="td">' + t.desc + '</div><span class="badge">externo</span></a>';
+  }
+  return '<button class="tool" data-i="' + idx + '"><div class="tn">' + t.name + '</div><div class="td">' + t.desc + '</div><span class="badge ' + (t.live?'live':'local') + '">' + (t.live?'en vivo':'sin conexión') + '</span></button>';
+}
+
+function renderCategory(catId){
+  const cat = CATS.find(c => c.id === catId); if (!cat) return renderHome();
+  const items = T.filter(t => t.cat === catId);
+  const view = document.getElementById('view');
+  view.innerHTML = '<h2 class="view-title">' + cat.name + '</h2><p class="view-desc">' + cat.desc + '</p><div class="grid">' +
+    items.map((t) => toolCard(t, T.indexOf(t))).join('') + '</div><button class="back" id="back-home" type="button">← Volver al inicio</button>';
+  view.querySelectorAll('.tool[data-i]').forEach(el => el.addEventListener('click', () => openTool(+el.dataset.i)));
+  document.getElementById('back-home').addEventListener('click', renderHome);
+  window.scrollTo({ top:0 });
+}
+
+function renderSearch(q){
+  const box = document.getElementById('results'); q = q.trim().toLowerCase();
+  if (!q){ box.innerHTML = ''; document.getElementById('catgrid').style.display = ''; return; }
+  document.getElementById('catgrid').style.display = 'none';
+  const m = T.map((t,i) => [t,i]).filter(([t]) => (t.name + ' ' + t.desc).toLowerCase().includes(q));
+  box.innerHTML = '<div class="home-title">Resultados (' + m.length + ')</div><div class="grid">' + m.map(([t,i]) => toolCard(t,i)).join('') + '</div>';
+  box.querySelectorAll('.tool[data-i]').forEach(el => el.addEventListener('click', () => openTool(+el.dataset.i)));
+}
+
+/* ---------- panel de herramienta ---------- */
+const panel = () => document.getElementById('panel');
+function fieldHTML(f){
+  const id = 'f_' + f.k;
+  if (f.t === 'textarea') return '<div class="field"><label for="' + id + '">' + f.l + '</label><textarea id="' + id + '" placeholder="' + (f.p||'') + '">' + (f.v||'') + '</textarea></div>';
+  if (f.t === 'select') return '<div class="field"><label for="' + id + '">' + f.l + '</label><select id="' + id + '">' + f.o.map(o => '<option' + (o===f.v?' selected':'') + '>' + o + '</option>').join('') + '</select></div>';
+  if (f.t === 'file') return '<div class="field"><label for="' + id + '">' + f.l + '</label><input id="' + id + '" type="file"></div>';
+  if (f.t === 'number') return '<div class="field"><label for="' + id + '">' + f.l + '</label><input id="' + id + '" type="number" value="' + (f.v ?? 0) + '"></div>';
+  return '<div class="field"><label for="' + id + '">' + f.l + '</label><input id="' + id + '" type="text" placeholder="' + (f.p||'') + '" value="' + (f.v||'') + '"></div>';
+}
+function readField(f){
+  const el = document.getElementById('f_' + f.k);
+  if (f.t === 'file') return el.files[0] || null;
+  if (f.t === 'number') return el.valueAsNumber || 0;
+  return el.value;
+}
+
+function openTool(i){
+  const t = T[i]; if (!t || !t.run) return;
+  document.getElementById('p-title').textContent = t.name;
+  document.getElementById('p-desc').textContent = t.desc + (t.live ? '  ·  Esta herramienta consulta un servicio externo en vivo.' : '  ·  Se procesa enteramente en tu navegador, sin salir de esta página.') ;
+  const form = document.getElementById('p-form');
+  form.innerHTML = t.fields.map(fieldHTML).join('') + '<button class="run" type="submit">Ejecutar</button>';
+  document.getElementById('p-outwrap').hidden = true;
+  document.getElementById('p-out').textContent = '';
+  document.getElementById('p-links').innerHTML = '';
+  document.getElementById('p-img').hidden = true;
+  panel().classList.add('on');
+  form.onsubmit = async ev => {
+    ev.preventDefault();
+    const btn = form.querySelector('.run'); btn.disabled = true; btn.textContent = 'Ejecutando…';
+    const outWrap = document.getElementById('p-outwrap'), out = document.getElementById('p-out'), linksEl = document.getElementById('p-links'), imgEl = document.getElementById('p-img');
+    outWrap.hidden = false; out.textContent = ''; linksEl.innerHTML = ''; imgEl.hidden = true;
+    try {
+      const vals = {}; t.fields.forEach(f => vals[f.k] = readField(f));
+      const r = await t.run(vals);
+      if (r && typeof r === 'object' && ('t' in r || 'links' in r || 'img' in r)){
+        out.textContent = r.t || '';
+        (r.links || []).forEach(l => { const a = document.createElement('a'); a.href = l.u; a.target = '_blank'; a.rel = 'noopener'; a.textContent = l.l + ' ↗'; linksEl.appendChild(a); });
+        if (r.img){ imgEl.src = r.img; imgEl.hidden = false; }
+      } else {
+        out.textContent = String(r);
+      }
+    } catch (e){
+      out.textContent = '✖ ' + (e && e.message ? e.message : String(e));
+    } finally {
+      btn.disabled = false; btn.textContent = 'Ejecutar';
+    }
+  };
+  document.getElementById('f_' + (t.fields[0] && t.fields[0].k))?.focus();
+}
+document.getElementById('p-close').addEventListener('click', () => panel().classList.remove('on'));
+panel().addEventListener('click', e => { if (e.target === panel()) panel().classList.remove('on'); });
+document.getElementById('p-copy').addEventListener('click', () => { const t = document.getElementById('p-out').textContent; navigator.clipboard && navigator.clipboard.writeText(t).catch(()=>{}); const b = document.getElementById('p-copy'); b.textContent = 'copiado'; setTimeout(() => b.textContent = 'copiar', 1200); });
+
+/* ---------- globo giratorio (pantalla de acceso) ---------- */
+function initGateGlobe(){
+  const canvas = document.getElementById('gateGlobe');
+  if (!canvas || !canvas.getContext) return;
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  let W, H, R, cx, cy;
+
+  function size(){
+    const box = canvas.getBoundingClientRect();
+    const side = Math.max(60, box.width || 132);
+    W = canvas.width = side * dpr; H = canvas.height = side * dpr;
+    R = W / 2 * 0.84; cx = W / 2; cy = H / 2;
+  }
+  size();
+  window.addEventListener('resize', size);
+
+  const RING_STEP = 20, MER_COUNT = 12;
+  const rings = [];
+  for (let la = -80; la <= 80; la += RING_STEP){
+    const pts = []; for (let i = 0; i <= 48; i++) pts.push([la * Math.PI/180, (i/48) * Math.PI*2]);
+    rings.push(pts);
+  }
+  const meridians = [];
+  for (let m = 0; m < MER_COUNT; m++){
+    const lon0 = (m/MER_COUNT) * Math.PI*2, pts = [];
+    for (let la = -90; la <= 90; la += 6) pts.push([la * Math.PI/180, lon0]);
+    meridians.push(pts);
+  }
+
+  function project(lat, lon, rot){
+    const lo = lon + rot;
+    return { x: Math.cos(lat)*Math.cos(lo), y: Math.sin(lat), z: Math.cos(lat)*Math.sin(lo) };
+  }
+  function strokePath(pts, rot){
+    ctx.beginPath(); let started = false;
+    pts.forEach(([la,lo]) => {
+      const p = project(la, lo, rot);
+      if (p.z < -0.04){ started = false; return; }
+      const sx = cx + p.x*R, sy = cy - p.y*R;
+      ctx.globalAlpha = 0.22 + 0.68 * ((p.z+1)/2);
+      if (!started){ ctx.moveTo(sx,sy); started = true; } else ctx.lineTo(sx,sy);
+    });
+    ctx.stroke();
+  }
+
+  let angle = 0, satAngle = 0;
+  function drawOrbit(){
+    const rx = R * 1.32, ry = R * 0.42;
+    ctx.beginPath();
+    for (let i = 0; i <= 72; i++){ const a = (i/72)*Math.PI*2, x = cx + Math.cos(a)*rx, y = cy + Math.sin(a)*ry; i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y); }
+    ctx.strokeStyle = 'rgba(234,90,46,.22)'; ctx.lineWidth = Math.max(1, W*0.0018); ctx.setLineDash([W*0.006, W*0.01]); ctx.stroke(); ctx.setLineDash([]);
+    const sx = cx + Math.cos(satAngle)*rx, sy = cy + Math.sin(satAngle)*ry;
+    const depth = (Math.sin(satAngle)+1)/2, rad = W*0.012*(0.6+depth*0.7);
+    ctx.beginPath(); ctx.arc(sx, sy, rad, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(255,200,150,' + (0.55+depth*0.4) + ')';
+    ctx.shadowColor = 'rgba(234,90,46,.95)'; ctx.shadowBlur = W*0.03; ctx.fill(); ctx.shadowBlur = 0;
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    drawOrbit();
+    const grad = ctx.createRadialGradient(cx-R*0.32, cy-R*0.32, R*0.08, cx, cy, R);
+    grad.addColorStop(0, 'rgba(234,90,46,.16)'); grad.addColorStop(1, 'rgba(10,4,4,.03)');
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.fillStyle = grad; ctx.fill();
+    ctx.strokeStyle = 'rgba(234,90,46,.9)'; ctx.lineWidth = Math.max(1, W*0.0028);
+    rings.forEach(r => strokePath(r, angle));
+    meridians.forEach(m => strokePath(m, angle));
+    ctx.globalAlpha = 1;
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2);
+    ctx.strokeStyle = 'rgba(200,30,30,.65)'; ctx.lineWidth = Math.max(1, W*0.005);
+    ctx.shadowColor = 'rgba(234,90,46,.85)'; ctx.shadowBlur = W*0.02; ctx.stroke(); ctx.shadowBlur = 0;
+  }
+  function loop(){
+    angle += 0.0065; satAngle += 0.028; draw();
+    if (!gate.classList.contains('gone')) requestAnimationFrame(loop);
+  }
+  draw();
+  if (!reduceMotion) requestAnimationFrame(loop);
+}
+initGateGlobe();
+
+/* ---------- brasas ascendiendo (fondo de la pantalla de acceso) ---------- */
+function initEmbers(){
+  const canvas = document.getElementById('gateEmbers');
+  if (!canvas || !canvas.getContext) return;
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  let W, H, parts = [];
+  const N = 46;
+
+  function rnd(a,b){ return a + Math.random()*(b-a); }
+  function spawn(fromBottom){
+    return {
+      x: Math.random()*W, y: fromBottom ? H + rnd(0,60) : rnd(0,H),
+      r: rnd(0.6,2.2)*dpr, vy: rnd(0.15,0.5)*dpr, drift: rnd(-0.15,0.15)*dpr,
+      a: rnd(0.15,0.75), tw: rnd(0.01,0.03)
+    };
+  }
+  function size(){
+    W = canvas.width = window.innerWidth * dpr; H = canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px'; canvas.style.height = window.innerHeight + 'px';
+    parts = Array.from({ length:N }, () => spawn(false));
+  }
+  size();
+  window.addEventListener('resize', size);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    parts.forEach(p => {
+      p.y -= p.vy; p.x += p.drift; p.a += p.tw;
+      if (p.y < -10) Object.assign(p, spawn(true));
+      const flick = 0.5 + Math.sin(p.a)*0.5;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(234,90,46,' + (flick*0.55).toFixed(3) + ')';
+      ctx.shadowColor = 'rgba(234,90,46,.8)'; ctx.shadowBlur = p.r*3; ctx.fill();
+    });
+    ctx.shadowBlur = 0;
+  }
+  function loop(){
+    draw();
+    if (!gate.classList.contains('gone')) requestAnimationFrame(loop);
+  }
+  if (reduceMotion){ draw(); } else { requestAnimationFrame(loop); }
+}
+initEmbers();
+
+/* ---------- estado de red ---------- */
+(async () => {
+  const s = document.getElementById('status');
+  try { await net('https://dns.google/resolve?name=example.com&type=A', { timeout:6000 }); s.textContent = 'red disponible — las herramientas EN VIVO están operativas'; s.classList.add('ok'); }
+  catch { s.textContent = 'sin salida a internet en este entorno — las herramientas EN VIVO no responderán; las locales sí'; s.classList.add('bad'); }
+})();
+
+/* ============================================================
+   ACCESO — la clave nunca se guarda ni se muestra en texto plano
+   ============================================================ */
+const PW_HASH = 'b381a26dd1db6622c4983970bd8efa480def8272ee659daed508832a6c1108a0';
+
+/* SHA-256 en JavaScript puro: no depende de crypto.subtle, así que
+   funciona también fuera de contextos "seguros" (http://, file://,
+   editores como Spck, previsualizaciones sin HTTPS, etc.). */
+function sha256pure(u8){
+  const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const len = u8.length, bitLen = len*8, total = (((len+8)>>6)+1)*64, buf = new Uint8Array(total);
+  buf.set(u8); buf[len] = 0x80;
+  const dv = new DataView(buf.buffer);
+  dv.setUint32(total-4, bitLen>>>0, false); dv.setUint32(total-8, Math.floor(bitLen/4294967296), false);
+  const rotr = (x,n) => (x>>>n)|(x<<(32-n));
+  const w = new Uint32Array(64);
+  for (let o=0; o<total; o+=64){
+    for (let i=0;i<16;i++) w[i] = dv.getUint32(o+i*4, false);
+    for (let i=16;i<64;i++){
+      const s0 = rotr(w[i-15],7) ^ rotr(w[i-15],18) ^ (w[i-15]>>>3);
+      const s1 = rotr(w[i-2],17) ^ rotr(w[i-2],19) ^ (w[i-2]>>>10);
+      w[i] = (w[i-16] + s0 + w[i-7] + s1) | 0;
+    }
+    let [a,b,c,d,e,f,g,h] = H;
+    for (let i=0;i<64;i++){
+      const S1 = rotr(e,6) ^ rotr(e,11) ^ rotr(e,25), ch = (e&f) ^ (~e&g);
+      const t1 = (h + S1 + ch + K[i] + w[i]) | 0;
+      const S0 = rotr(a,2) ^ rotr(a,13) ^ rotr(a,22), maj = (a&b) ^ (a&c) ^ (b&c);
+      const t2 = (S0 + maj) | 0;
+      h=g; g=f; f=e; e=(d+t1)|0; d=c; c=b; b=a; a=(t1+t2)|0;
+    }
+    H = [H[0]+a|0, H[1]+b|0, H[2]+c|0, H[3]+d|0, H[4]+e|0, H[5]+f|0, H[6]+g|0, H[7]+h|0];
+  }
+  return H.map(x => (x>>>0).toString(16).padStart(8,'0')).join('');
+}
+
+const gate = document.getElementById('gate'), app = document.getElementById('app'), pwInput = document.getElementById('pw'), enterBtn = document.getElementById('enter'), msg = document.getElementById('gate-msg'), gbox = document.getElementById('gatebox');
+
+function tryEnter(){
+  const val = pwInput.value; if (!val){ pwInput.focus(); return; }
+  try {
+    const h = sha256pure(enc.encode(val));
+    if (h === PW_HASH){
+      gate.classList.add('gone');
+      app.classList.add('on');
+      renderHome();
+    } else {
+      msg.textContent = 'acceso denegado';
+      gbox.classList.remove('shake'); void gbox.offsetWidth; gbox.classList.add('shake');
+      pwInput.value = ''; pwInput.focus();
+    }
+  } catch (e){
+    msg.textContent = 'error interno: ' + (e && e.message ? e.message : e);
+  }
+}
+enterBtn.addEventListener('click', tryEnter);
+pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryEnter(); });
+window.addEventListener('load', () => pwInput.focus());
+</script>
+</body>
+</html>
